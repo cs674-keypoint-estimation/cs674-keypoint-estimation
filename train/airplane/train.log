@@ -1,0 +1,280 @@
+[2024-04-27 00:45:47,393][__main__][INFO] - Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated,
+  Noisy, and Decimated Point Cloud Data (ICCV-2023)
+split: train
+task: canonical
+key_points: 10
+batch_size: 26
+max_epoch: 5
+num_workers: 6
+class_name: airplane
+overlap_threshold: 0.05
+save_results: true
+parameters:
+  separation: 1
+  overlap: 1
+  shape: 6
+  consist: 1
+  volume: 1
+  pose: 0.07
+augmentation:
+  translation: false
+  rot_gravity: false
+  normalize_pc: true
+  gaussian_noise: false
+  down_sample: false
+lamda: 0
+lamda2: 0
+sample_points: 2048
+data:
+  annot_path: dataset/annotations/airplane.json
+  pcd_root: dataset/pcds
+  splits_root: dataset/splits
+  poses_root: dataset/poses
+  best_model_path: train/airplane/Best_airplane_10kp.pth
+log_path: canonical_logs
+
+[2024-04-27 00:47:50,395][__main__][INFO] - Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated,
+  Noisy, and Decimated Point Cloud Data (ICCV-2023)
+split: train
+task: canonical
+key_points: 10
+batch_size: 26
+max_epoch: 5
+num_workers: 6
+class_name: airplane
+overlap_threshold: 0.05
+save_results: true
+parameters:
+  separation: 1
+  overlap: 1
+  shape: 6
+  consist: 1
+  volume: 1
+  pose: 0.07
+augmentation:
+  translation: false
+  rot_gravity: false
+  normalize_pc: true
+  gaussian_noise: false
+  down_sample: false
+lamda: 0
+lamda2: 0
+sample_points: 2048
+data:
+  annot_path: dataset/annotations/airplane.json
+  pcd_root: dataset/pcds
+  splits_root: dataset/splits
+  poses_root: dataset/poses
+  best_model_path: train/airplane/Best_airplane_10kp.pth
+log_path: canonical_logs
+
+[2024-04-27 00:48:47,991][__main__][INFO] - Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated,
+  Noisy, and Decimated Point Cloud Data (ICCV-2023)
+split: train
+task: canonical
+key_points: 10
+batch_size: 26
+max_epoch: 5
+num_workers: 6
+class_name: airplane
+overlap_threshold: 0.05
+save_results: true
+parameters:
+  separation: 1
+  overlap: 1
+  shape: 6
+  consist: 1
+  volume: 1
+  pose: 0.07
+augmentation:
+  translation: false
+  rot_gravity: false
+  normalize_pc: true
+  gaussian_noise: false
+  down_sample: false
+lamda: 0
+lamda2: 0
+sample_points: 2048
+data:
+  annot_path: dataset/annotations/airplane.json
+  pcd_root: dataset/pcds
+  splits_root: dataset/splits
+  poses_root: dataset/poses
+  best_model_path: train/airplane/Best_airplane_10kp.pth
+log_path: canonical_logs
+
+[2024-04-27 02:39:57,446][__main__][INFO] - Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated,
+  Noisy, and Decimated Point Cloud Data (ICCV-2023)
+split: train
+task: canonical
+key_points: 10
+batch_size: 26
+max_epoch: 5
+num_workers: 6
+class_name: airplane
+overlap_threshold: 0.05
+save_results: true
+parameters:
+  separation: 1
+  overlap: 1
+  shape: 6
+  consist: 1
+  volume: 1
+  pose: 0.07
+augmentation:
+  translation: false
+  rot_gravity: false
+  normalize_pc: true
+  gaussian_noise: false
+  down_sample: false
+lamda: 0
+lamda2: 0
+sample_points: 2048
+data:
+  annot_path: dataset/annotations/airplane.json
+  pcd_root: dataset/pcds
+  splits_root: dataset/splits
+  poses_root: dataset/poses
+  best_model_path: train/airplane/Best_airplane_10kp.pth
+log_path: canonical_logs
+
+[2024-04-27 02:41:10,612][__main__][INFO] - Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated,
+  Noisy, and Decimated Point Cloud Data (ICCV-2023)
+split: train
+task: canonical
+key_points: 10
+batch_size: 26
+max_epoch: 5
+num_workers: 6
+class_name: airplane
+overlap_threshold: 0.05
+save_results: true
+parameters:
+  separation: 1
+  overlap: 1
+  shape: 6
+  consist: 1
+  volume: 1
+  pose: 0.07
+augmentation:
+  translation: false
+  rot_gravity: false
+  normalize_pc: true
+  gaussian_noise: false
+  down_sample: false
+lamda: 0
+lamda2: 0
+sample_points: 2048
+data:
+  annot_path: dataset/annotations/airplane.json
+  pcd_root: dataset/pcds
+  splits_root: dataset/splits
+  poses_root: dataset/poses
+  best_model_path: train/airplane/Best_airplane_10kp.pth
+log_path: canonical_logs
+
+[2024-04-27 02:42:54,110][__main__][INFO] - Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated,
+  Noisy, and Decimated Point Cloud Data (ICCV-2023)
+split: train
+task: canonical
+key_points: 10
+batch_size: 26
+max_epoch: 5
+num_workers: 6
+class_name: airplane
+overlap_threshold: 0.05
+save_results: true
+parameters:
+  separation: 1
+  overlap: 1
+  shape: 6
+  consist: 1
+  volume: 1
+  pose: 0.07
+augmentation:
+  translation: false
+  rot_gravity: false
+  normalize_pc: true
+  gaussian_noise: false
+  down_sample: false
+lamda: 0
+lamda2: 0
+sample_points: 2048
+data:
+  annot_path: dataset/annotations/airplane.json
+  pcd_root: dataset/pcds
+  splits_root: dataset/splits
+  poses_root: dataset/poses
+  best_model_path: train/airplane/Best_airplane_10kp.pth
+log_path: canonical_logs
+
+[2024-04-28 19:02:07,688][__main__][INFO] - Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated,
+  Noisy, and Decimated Point Cloud Data (ICCV-2023)
+split: train
+task: canonical
+key_points: 10
+batch_size: 26
+max_epoch: 5
+num_workers: 6
+class_name: airplane
+overlap_threshold: 0.05
+save_results: true
+parameters:
+  separation: 1
+  overlap: 1
+  shape: 6
+  consist: 1
+  volume: 1
+  pose: 0.07
+augmentation:
+  translation: false
+  rot_gravity: false
+  normalize_pc: true
+  gaussian_noise: false
+  down_sample: false
+lamda: 0
+lamda2: 0
+sample_points: 2048
+data:
+  annot_path: dataset/annotations/airplane.json
+  pcd_root: dataset/pcds
+  splits_root: dataset/splits
+  poses_root: dataset/poses
+  best_model_path: train/airplane/Best_airplane_10kp.pth
+log_path: canonical_logs
+
+[2024-04-29 00:50:24,872][__main__][INFO] - Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated,
+  Noisy, and Decimated Point Cloud Data (ICCV-2023)
+split: train
+task: canonical
+key_points: 10
+batch_size: 26
+max_epoch: 5
+num_workers: 6
+class_name: airplane
+overlap_threshold: 0.05
+save_results: true
+parameters:
+  separation: 1
+  overlap: 1
+  shape: 6
+  consist: 1
+  volume: 1
+  pose: 0.07
+augmentation:
+  translation: false
+  rot_gravity: false
+  normalize_pc: true
+  gaussian_noise: false
+  down_sample: false
+lamda: 0
+lamda2: 0
+sample_points: 2048
+data:
+  annot_path: dataset/annotations/airplane.json
+  pcd_root: dataset/pcds
+  splits_root: dataset/splits
+  poses_root: dataset/poses
+  best_model_path: train/airplane/Best_airplane_10kp.pth
+log_path: canonical_logs
+
