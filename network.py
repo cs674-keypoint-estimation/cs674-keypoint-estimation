@@ -5,6 +5,7 @@ import hydra
 import numpy as np
 import einops
 from torch.autograd import Variable
+from model import PointTransformerV3
 
 
 
@@ -284,7 +285,8 @@ class Unsupervised_kpnet(nn.Module):
     """
     def __init__(self, cfg):
         super(Unsupervised_kpnet, self).__init__()
-        self.pointnet_encoder = PointNetfeat()
+        # self.pointnet_encoder = PointNetfeat()
+        self.ptv3_encoder = PointTransformerV3()
         self.block1 = residual_block(1024, 512)
         self.block2 = residual_block(512, 256)
         self.conv23 = torch.nn.Conv1d(256, cfg.key_points, 1)

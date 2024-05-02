@@ -22,7 +22,7 @@ try:
 except ImportError:
     flash_attn = None
 
-from .serialization import encode
+from serialization import encode
 
 
 @torch.inference_mode()
@@ -805,11 +805,11 @@ class PointTransformerV3(PointModule):
         drop_path=0.3,
         pre_norm=True,
         shuffle_orders=True,
-        enable_rpe=False,
-        enable_flash=True,
-        upcast_attention=False,
-        upcast_softmax=False,
-        cls_mode=False,
+        enable_rpe=True,
+        enable_flash=False,
+        upcast_attention=True,
+        upcast_softmax=True,
+        cls_mode=True,
         pdnorm_bn=False,
         pdnorm_ln=False,
         pdnorm_decouple=True,
