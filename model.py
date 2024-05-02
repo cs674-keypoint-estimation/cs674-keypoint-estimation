@@ -976,7 +976,9 @@ class PointTransformerV3(PointModule):
         point.sparsify()
 
         point = self.embedding(point)
+        print(point)
         point = self.enc(point)
+        print(point)
         if not self.cls_mode:
             point = self.dec(point)
         return point
