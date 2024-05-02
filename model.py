@@ -590,19 +590,25 @@ class Block(PointModule):
         shortcut = point.feat
         if self.pre_norm:
             point = self.norm1(point)
+        print(point.feat.shape)
         point = self.drop_path(self.attn(point))
+        print(point.feat.shape)
         point.feat = shortcut + point.feat
         if not self.pre_norm:
             point = self.norm1(point)
-
+        print(point.feat.shape)
         shortcut = point.feat
         if self.pre_norm:
             point = self.norm2(point)
+        print(point.feat.shape)
         point = self.drop_path(self.mlp(point))
+        print(point.feat.shape)
         point.feat = shortcut + point.feat
         if not self.pre_norm:
             point = self.norm2(point)
+        print(point.feat.shape)
         point.sparse_conv_feat = point.sparse_conv_feat.replace_feature(point.feat)
+        print(point.feat.shape)
         return point
 
 
@@ -786,13 +792,13 @@ class Embedding(PointModule):
 class PointTransformerV3(PointModule):
     def __init__(
         self,
-        in_channels=6,
+        in_channels=3,
         order=("z", "z-trans", "hilbert", "hilbert-trans"),
-        stride=(2, 2, 2, 2),
-        enc_depths=(2, 2, 2, 6, 2),
-        enc_channels=(32, 64, 128, 256, 512),
-        enc_num_head=(2, 4, 8, 16, 32),
-        enc_patch_size=(1024, 1024, 1024, 1024, 1024),
+        stride=(2, 2, 2, 2, 2),
+        enc_depths=(2, 2, 2, 6, 2, 2),
+        enc_channels=(32, 64, 128, 256, 512, 1024),
+        enc_num_head=(2, 4, 8, 16, 32, 64),
+        enc_patch_size=(1024, 1024, 1024, 1024, 1024, 1024),
         dec_depths=(2, 2, 2, 2),
         dec_channels=(64, 64, 128, 256),
         dec_num_head=(4, 4, 8, 16),
@@ -805,11 +811,11 @@ class PointTransformerV3(PointModule):
         drop_path=0.3,
         pre_norm=True,
         shuffle_orders=True,
-        enable_rpe=False,
-        enable_flash=True,
-        upcast_attention=False,
-        upcast_softmax=False,
-        cls_mode=False,
+        enable_rpe=True,
+        enable_flash=False,
+        upcast_attention=True,
+        upcast_softmax=True,
+        cls_mode=True,
         pdnorm_bn=False,
         pdnorm_ln=False,
         pdnorm_decouple=True,
