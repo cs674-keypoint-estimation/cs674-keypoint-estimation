@@ -49,7 +49,7 @@ def create_ptv3_dict(coord, feat, grid_size):
     ptv3_dict["coord"] = coord.view(-1, 3).to(coord.device)
 
     #Add grid_size to the dictionary
-    ptv3_dict["grid_size"] = grid_size.to(coord.device)
+    ptv3_dict["grid_size"] = grid_size
 
     #Convert fear of shape (B, N, C) to (B*N, C)
     ptv3_dict["feat"] = feat.view(-1, feat.shape[-1]).to(feat.device)
