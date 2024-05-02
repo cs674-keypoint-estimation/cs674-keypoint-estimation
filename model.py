@@ -590,25 +590,18 @@ class Block(PointModule):
         shortcut = point.feat
         if self.pre_norm:
             point = self.norm1(point)
-        print(point.feat.shape)
         point = self.drop_path(self.attn(point))
-        print(point.feat.shape)
         point.feat = shortcut + point.feat
         if not self.pre_norm:
             point = self.norm1(point)
-        print(point.feat.shape)
         shortcut = point.feat
         if self.pre_norm:
             point = self.norm2(point)
-        print(point.feat.shape)
         point = self.drop_path(self.mlp(point))
-        print(point.feat.shape)
         point.feat = shortcut + point.feat
         if not self.pre_norm:
             point = self.norm2(point)
-        print(point.feat.shape)
         point.sparse_conv_feat = point.sparse_conv_feat.replace_feature(point.feat)
-        print(point.feat.shape)
         return point
 
 
