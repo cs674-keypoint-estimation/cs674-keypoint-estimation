@@ -46,16 +46,16 @@ def create_ptv3_dict(coord, feat, grid_size):
     ptv3_dict = dict()
 
     #Convert coord of shape (B, N, 3) to (B*N, 3)
-    ptv3_dict["coord"] = coord.view(-1, 3)
+    ptv3_dict["coord"] = coord.view(-1, 3).to(coord.device)
 
     #Add grid_size to the dictionary
-    ptv3_dict["grid_size"] = grid_size
+    ptv3_dict["grid_size"] = grid_size.to(coord.device)
 
     #Convert fear of shape (B, N, C) to (B*N, C)
-    ptv3_dict["feat"] = feat.view(-1, feat.shape[-1])
+    ptv3_dict["feat"] = feat.view(-1, feat.shape[-1]).to(feat.device)
 
     #Create a 1D batch index tensor of shape (B*N) of type LongTensor
-    ptv3_dict["batch"] = torch.arange(coord.shape[0]).repeat_interleave(coord.shape[1])
+    ptv3_dict["batch"] = torch.arange(coord.shape[0]).repeat_interleave(coord.shape[1]).to(coord.device)
 
     return ptv3_dict
 
