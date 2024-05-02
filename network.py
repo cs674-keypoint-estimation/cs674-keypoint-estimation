@@ -30,6 +30,33 @@ def vector_gather(vectors, indices):
         out = out.squeeze(1)
     return out
 
+def create_ptv3_dict(coord, feat, grid_size):
+    """
+    Create a dictionary to be used for Point Transformers v3 using Pytorch FloatTensors of coordinates and features.
+    Arguments:
+        coord: FloatTensor[N, 3]
+        feat: FloatTensor[N, C]
+        grid_size: float
+
+    Returns:
+        dict: Dictionary with keys 'coord', 'feat', 'grid_size', 'batch'
+    """
+
+    ptv3_dict = dict()
+
+    #Convert coord of shape (B, N, 3) to (B*N, 3)
+    ptv3_dict["coord"] = coord.view(-1, 3)
+
+    #Add grid_size to the dictionary
+    ptv3_dict["grid_size"] = grid_size
+
+    #Convert fear of shape (B, N, C) to (B*N, C)
+    ptv3_dict["feat"] = feat.view(-1, feat.shape[-1])
+
+    #Create a 1D batch index tensor of shape (B*N) of type LongTensor
+    ptv3_dict["batch"] = torch.arange(coord.shape[0]).repeat_interleave(coord.shape[1])
+
+    return ptv3_dict
 
 class residual_block(nn.Module):
     """
