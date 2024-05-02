@@ -786,13 +786,13 @@ class Embedding(PointModule):
 class PointTransformerV3(PointModule):
     def __init__(
         self,
-        in_channels=3,
+        in_channels=6,
         order=("z", "z-trans", "hilbert", "hilbert-trans"),
-        stride=(2, 2, 2, 2, 2),
-        enc_depths=(2, 2, 2, 6, 2, 2),
-        enc_channels=(32, 64, 128, 256, 512, 1024),
-        enc_num_head=(2, 4, 8, 16, 32, 64),
-        enc_patch_size=(1024, 1024, 1024, 1024, 1024, 1024),
+        stride=(2, 2, 2, 2),
+        enc_depths=(2, 2, 2, 6, 2),
+        enc_channels=(32, 64, 128, 256, 512),
+        enc_num_head=(2, 4, 8, 16, 32),
+        enc_patch_size=(1024, 1024, 1024, 1024, 1024),
         dec_depths=(2, 2, 2, 2),
         dec_channels=(64, 64, 128, 256),
         dec_num_head=(4, 4, 8, 16),
@@ -806,10 +806,10 @@ class PointTransformerV3(PointModule):
         pre_norm=True,
         shuffle_orders=True,
         enable_rpe=False,
-        enable_flash=False,
-        upcast_attention=True,
-        upcast_softmax=True,
-        cls_mode=True,
+        enable_flash=True,
+        upcast_attention=False,
+        upcast_softmax=False,
+        cls_mode=False,
         pdnorm_bn=False,
         pdnorm_ln=False,
         pdnorm_decouple=True,
@@ -972,16 +972,11 @@ class PointTransformerV3(PointModule):
         3. "offset" or "batch": https://github.com/Pointcept/Pointcept?tab=readme-ov-file#offset
         """
         point = Point(data_dict)
-        print(point.feat.shape, point.coord.shape, point.grid_coord.shape, point.batch.shape)
         point.serialization(order=self.order, shuffle_orders=self.shuffle_orders)
-        print(point.feat.shape, point.coord.shape, point.grid_coord.shape, point.batch.shape)
         point.sparsify()
-        print(point.feat.shape, point.coord.shape, point.grid_coord.shape, point.batch.shape)
+
         point = self.embedding(point)
-        print(point.feat.shape, point.coord.shape, point.grid_coord.shape, point.batch.shape)
         point = self.enc(point)
-        print(point.feat.shape, point.coord.shape, point.grid_coord.shape, point.batch.shape)
-        print("test")
         if not self.cls_mode:
             point = self.dec(point)
         return point
