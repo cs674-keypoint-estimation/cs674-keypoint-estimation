@@ -792,10 +792,10 @@ class PointTransformerV3(PointModule):
         enc_channels=(32, 64, 128, 256, 512, 1024),
         enc_num_head=(2, 4, 8, 16, 32, 64),
         enc_patch_size=(1024, 1024, 1024, 1024, 1024, 1024),
-        dec_depths=(2, 2, 2, 2, 2),
-        dec_channels=(64, 64, 128, 256, 512),
-        dec_num_head=(4, 4, 8, 16, 32),
-        dec_patch_size=(1024, 1024, 1024, 1024, 1024),
+        dec_depths=(2, 2, 2, 2),
+        dec_channels=(64, 64, 128, 256),
+        dec_num_head=(4, 4, 8, 16),
+        dec_patch_size=(1024, 1024, 1024, 1024),
         mlp_ratio=4,
         qkv_bias=True,
         qk_scale=None,
@@ -913,22 +913,6 @@ class PointTransformerV3(PointModule):
             if len(enc) != 0:
                 self.enc.add(module=enc, name=f"enc{s}")
 
-        
-        self.unpool = PointSequential()
-        for s in reversed(range(self.num_stages - 1)):
-            unpool = PointSequential()
-            unpool.add(
-                SerializedUnpooling(
-                    in_channels=1024,
-                    skip_channels=enc_channels[s],
-                    out_channels=1024,
-                    norm_layer=bn_layer,
-                    act_layer=act_layer,
-                ),
-                name="up",
-            )
-        self.unpool.add(module=unpool, name=f"unpool{s}")
-
         # decoder
         if not self.cls_mode:
             dec_drop_path = [
@@ -992,8 +976,6 @@ class PointTransformerV3(PointModule):
 
         point = self.embedding(point)
         point = self.enc(point)
-        point = self.unpool(point)
-        print(point.feat.shape)
         if not self.cls_mode:
             point = self.dec(point)
         return point
