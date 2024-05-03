@@ -913,6 +913,13 @@ class PointTransformerV3(PointModule):
             if len(enc) != 0:
                 self.enc.add(module=enc, name=f"enc{s}")
 
+        self.unpool = SerializedUnpooling(
+                        in_channels=1024,
+                        skip_channels=1024,
+                        out_channels=1024,
+                        norm_layer=bn_layer,
+                        act_layer=act_layer,
+                    )
         # decoder
         if not self.cls_mode:
             dec_drop_path = [
@@ -976,6 +983,8 @@ class PointTransformerV3(PointModule):
 
         point = self.embedding(point)
         point = self.enc(point)
+        point = self.unpool(point)
+        print(point.feat.shape)
         if not self.cls_mode:
             point = self.dec(point)
         return point
