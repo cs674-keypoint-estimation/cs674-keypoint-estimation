@@ -790,7 +790,7 @@ class PointTransformerV3(PointModule):
         stride=(2, 2, 2, 2, 2),
         enc_depths=(2, 2, 2, 2, 2, 2),
         enc_channels=(32, 64, 128, 256, 512, 1024),
-        enc_num_head=(2, 4, 8, 16),
+        enc_num_head=(2, 4, 8, 16, 32, 64),
         enc_patch_size=(1024, 1024, 1024, 1024),
         dec_depths=(2, 2),
         dec_channels=(128, 128),
