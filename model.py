@@ -913,13 +913,28 @@ class PointTransformerV3(PointModule):
             if len(enc) != 0:
                 self.enc.add(module=enc, name=f"enc{s}")
 
-        self.unpool = SerializedUnpooling(
-                        in_channels=1024,
-                        skip_channels=1024,
-                        out_channels=1024,
-                        norm_layer=bn_layer,
-                        act_layer=act_layer,
-                    )
+        dec_drop_path = [
+                x.item() for x in torch.linspace(0, drop_path, sum(dec_depths))
+            ]
+        self.unpool = PointSequential()
+        dec_channels = list(dec_channels) + [enc_channels[-1]]
+        for s in reversed(range(self.num_stages - 1)):
+            dec_drop_path_ = dec_drop_path[
+                sum(dec_depths[:s]) : sum(dec_depths[: s + 1])
+            ]
+            dec_drop_path_.reverse()
+            unpool = PointSequential()
+            unpool.add(
+                SerializedUnpooling(
+                    in_channels=dec_channels[s + 1],
+                    skip_channels=enc_channels[s],
+                    out_channels=dec_channels[s],
+                    norm_layer=bn_layer,
+                    act_layer=act_layer,
+                ),
+                name="up",
+            )
+        self.unpool.add(module=unpool, name=f"unpool{s}")
         # decoder
         if not self.cls_mode:
             dec_drop_path = [
