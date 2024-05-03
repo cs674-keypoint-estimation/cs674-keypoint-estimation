@@ -286,6 +286,7 @@ class Unsupervised_kpnet(nn.Module):
     def __init__(self, cfg):
         super(Unsupervised_kpnet, self).__init__()
         self.pointnet_encoder = PointNetfeat()
+        self.ptv3_encoder = PointTransformerV3()
         self.block1 = residual_block(1024, 512)
         self.block2 = residual_block(512, 256)
         self.conv23 = torch.nn.Conv1d(256, cfg.key_points, 1)
@@ -293,6 +294,10 @@ class Unsupervised_kpnet(nn.Module):
 
     def forward(self, pc):
         x = self.pointnet_encoder(pc.permute(0, 2, 1))   # [B x 1024 x 2048]
+        ptv3_dict = create_ptv3_dict(pc, pc, 0.05)
+        t = self.ptv3_encoder(ptv3_dict)
+        print(x.shape, t.shape)
+        exit()
         # Down-sampling from 1024 to M key-points
         x = self.block1(x)          # [B x 512 x 2048]
         x = self.block2(x)          # [B x 256 x 2048]
