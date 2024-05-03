@@ -787,11 +787,11 @@ class PointTransformerV3(PointModule):
         self,
         in_channels=3,
         order=("z", "z-trans", "hilbert", "hilbert-trans"),
-        stride=(2, 2),
-        enc_depths=(2, 2, 2),
-        enc_channels=(32, 64, 128),
-        enc_num_head=(2, 4, 8),
-        enc_patch_size=(1024, 1024, 1024),
+        stride=(2, 2, 2, 2, 2),
+        enc_depths=(2, 2, 2, 2, 2, 2),
+        enc_channels=(32, 64, 128, 256, 512, 1024),
+        enc_num_head=(2, 4, 8, 16),
+        enc_patch_size=(1024, 1024, 1024, 1024),
         dec_depths=(2, 2),
         dec_channels=(128, 128),
         dec_num_head=(4, 4),
@@ -808,7 +808,7 @@ class PointTransformerV3(PointModule):
         enable_flash=False,
         upcast_attention=True,
         upcast_softmax=True,
-        cls_mode=False,
+        cls_mode=True,
         pdnorm_bn=False,
         pdnorm_ln=False,
         pdnorm_decouple=True,
@@ -912,7 +912,20 @@ class PointTransformerV3(PointModule):
                 )
             if len(enc) != 0:
                 self.enc.add(module=enc, name=f"enc{s}")
-
+        
+        self.unpool = PointSequential()
+        for s in reversed(range(self.num_stages - 1)):
+            self.unpool.add(
+                SerializedUnpooling(
+                    in_channels=1024,
+                    skip_channels=enc_channels[s],
+                    out_channels=1024,
+                    norm_layer=bn_layer,
+                    act_layer=act_layer,
+                ),
+                name=f"up{s}",
+            )
+        
         # decoder
         if not self.cls_mode:
             dec_drop_path = [
@@ -976,6 +989,7 @@ class PointTransformerV3(PointModule):
 
         point = self.embedding(point)
         point = self.enc(point)
+        point = self.unpool(point)
         if not self.cls_mode:
             point = self.dec(point)
         return point
