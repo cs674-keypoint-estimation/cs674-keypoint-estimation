@@ -922,6 +922,7 @@ class PointTransformerV3(PointModule):
             dec_drop_path_ = dec_drop_path[
                 sum(dec_depths[:s]) : sum(dec_depths[: s + 1])
             ]
+            print(enc_channels[s], dec_channels[s + 1], dec_channels[s])
             dec_drop_path_.reverse()
             unpool = PointSequential()
             unpool.add(
