@@ -294,10 +294,12 @@ class Unsupervised_kpnet(nn.Module):
 
     def forward(self, pc):
         x = self.pointnet_encoder(pc.permute(0, 2, 1))   # [B x 1024 x 2048]
-        # ptv3_dict = create_ptv3_dict(pc, pc, 0.05)
-        # t = self.ptv3_encoder(ptv3_dict)
-        # print(x.shape, t.feat.shape)
-        # exit()
+        ptv3_dict = create_ptv3_dict(pc, pc, 0.05)
+        t = self.ptv3_encoder(ptv3_dict)
+        batch_size = pc.size(0)
+        num_points = pc.size(1)
+        ptv3_output = t.feat.view(batch_size, -1, num_points)
+        #exit()
         # Down-sampling from 1024 to M key-points
         x = self.block1(x)          # [B x 512 x 2048]
         x = self.block2(x)          # [B x 256 x 2048]
