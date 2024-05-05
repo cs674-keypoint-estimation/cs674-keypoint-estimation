@@ -917,9 +917,9 @@ class PointTransformerV3(PointModule):
         for s in reversed(range(self.num_stages - 1)):
             self.unpool.add(
                 SerializedUnpooling(
-                    in_channels=1024,
+                    in_channels=enc_channels[-1],
                     skip_channels=enc_channels[s],
-                    out_channels=1024,
+                    out_channels=enc_channels[-1],
                     norm_layer=bn_layer,
                     act_layer=act_layer,
                 ),
