@@ -87,7 +87,7 @@ def save_kp_and_pc_in_pcd(pc, kp, output_dir, save=True, name=""):
         vis.update_renderer()
         if not os.path.exists(output_dir+'/png'):
             os.makedirs(output_dir+'/png')
-        vis.capture_screen_image("{}/{}.png".format(output_dir+'/png', name))
+        vis.capture_screen_image("{}/{}.png".format(output_dir+'/png', name), do_render=True)
         vis.destroy_window()
     else:
         o3d.visualization.draw_geometries([pcd])
