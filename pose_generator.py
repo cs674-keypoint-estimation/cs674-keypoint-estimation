@@ -1,6 +1,9 @@
 import numpy as np
 import os
 
+input_folder = 'dataset/pcds/03467517' #Change last section to shape ID
+output_folder ='dataset/poses/03467517' #Change last section to shape ID
+
 def generate_camera_mat():
     return np.array([
         [149.84375, 0.0, 68.5],
@@ -27,13 +30,13 @@ def generate_world_mat(filename):
     return npz_filename, world_matrix
     #np.savez(npz_filename, _world_mat_=world_matrix)
 
-input_folder = 'dataset/pcds/02691156'
-output_folder ='test1'
-
 def generate_poses(folder_of_pcds,rotations):
+
+    if not os.path.exists(output_folder):
+        os.mkdir(output_folder)
+
     poses_list ={}
     for filename in os.listdir(folder_of_pcds):
-        print("I AM HERE", filename)
         for index in range(rotations):
             #print("index: ",index)
             #print("name: ",filename)
@@ -47,7 +50,7 @@ def generate_poses(folder_of_pcds,rotations):
         new_filename = os.path.splitext(filename)[0]
         npz_path = os.path.join(output_folder, f"{new_filename}.npz")
         np.savez(npz_path, **poses_list)
-        print(poses_list)
+        #print(poses_list)
     return None     
 
 #print(os.listdir('dataset/pcds'))
