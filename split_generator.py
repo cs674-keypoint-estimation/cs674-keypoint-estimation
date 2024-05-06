@@ -15,6 +15,7 @@ def generate_poses(folder_of_pcds):
         base_name = os.path.splitext(os.path.basename(filename))[0]
         results.append(f"{class_id}-{base_name}")
 
+    results = sorted(results)
     train_path = os.path.join(output_folder, 'train.txt')
     test_path = os.path.join(output_folder, 'test.txt')
     val_path = os.path.join(output_folder, 'val.txt')
