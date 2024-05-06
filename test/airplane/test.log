@@ -33,3 +33,311 @@ data:
   poses_root: dataset/poses
   best_model_path: train/airplane/Best_airplane_10kp.pth
 
+[2024-05-05 16:40:49,180][__main__][INFO] - Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated,
+  Noisy, and Decimated Point Cloud Data (ICCV-2023)
+split: test
+task: generic
+key_points: 10
+batch_size: 26
+max_epoch: 5
+num_workers: 6
+class_name: airplane
+overlap_threshold: 0.05
+save_results: true
+parameters:
+  separation: 1
+  overlap: 1
+  shape: 6
+  consist: 1
+  volume: 1
+  pose: 0.07
+augmentation:
+  translation: false
+  rot_gravity: false
+  normalize_pc: true
+  gaussian_noise: false
+  down_sample: false
+  uniform_sampling: false
+lamda: 0
+lamda2: 0
+sample_points: 2048
+data:
+  annot_path: dataset/annotations/airplane.json
+  pcd_root: dataset/pcds
+  splits_root: dataset/splits
+  poses_root: dataset/poses
+  best_model_path: train/airplane/Best_airplane_10kp.pth
+
+[2024-05-05 16:42:20,893][__main__][INFO] - Avg. coverage_useek: 87.01
+[2024-05-05 16:42:20,893][__main__][INFO] - Avg. inclusivity_useek: 81.19
+[2024-05-05 16:42:20,893][__main__][INFO] - Avg. DAS_unsup: 26.78
+[2024-05-05 16:42:20,895][__main__][INFO] - Avg. pose_error: mean: 113.81779145459649 median: 134.15706051651995
+[2024-05-05 17:23:43,736][__main__][INFO] - Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated,
+  Noisy, and Decimated Point Cloud Data (ICCV-2023)
+split: test
+task: generic
+key_points: 10
+batch_size: 26
+max_epoch: 20
+num_workers: 6
+class_name: airplane
+overlap_threshold: 0.05
+save_results: true
+parameters:
+  separation: 1
+  overlap: 1
+  shape: 6
+  consist: 1
+  volume: 1
+  pose: 0.07
+augmentation:
+  translation: false
+  rot_gravity: false
+  normalize_pc: true
+  gaussian_noise: false
+  down_sample: false
+  uniform_sampling: false
+lamda: 0
+lamda2: 0
+sample_points: 2048
+data:
+  annot_path: dataset/annotations/airplane.json
+  pcd_root: dataset/pcds
+  splits_root: dataset/splits
+  poses_root: dataset/poses
+  best_model_path: train/airplane/Best_airplane_10kp.pth
+
+[2024-05-05 17:25:19,298][__main__][INFO] - Avg. coverage_useek: 92.55
+[2024-05-05 17:25:19,299][__main__][INFO] - Avg. inclusivity_useek: 85.32
+[2024-05-05 17:25:19,299][__main__][INFO] - Avg. DAS_unsup: 28.39
+[2024-05-05 17:25:19,299][__main__][INFO] - Avg. pose_error: mean: 111.65236773575464 median: 136.03830678327975
+[2024-05-05 20:54:09,838][__main__][INFO] - Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated,
+  Noisy, and Decimated Point Cloud Data (ICCV-2023)
+split: test
+task: generic
+key_points: 10
+batch_size: 6
+max_epoch: 20
+num_workers: 6
+class_name: airplane
+overlap_threshold: 0.05
+save_results: true
+parameters:
+  separation: 1
+  overlap: 1
+  shape: 6
+  consist: 1
+  volume: 1
+  pose: 0.07
+augmentation:
+  translation: false
+  rot_gravity: false
+  normalize_pc: true
+  gaussian_noise: false
+  down_sample: false
+  uniform_sampling: false
+lamda: 0
+lamda2: 0
+sample_points: 2048
+data:
+  annot_path: dataset/annotations/airplane.json
+  pcd_root: dataset/pcds
+  splits_root: dataset/splits
+  poses_root: dataset/poses
+  best_model_path: train/airplane/Best_airplane_10kp.pth
+
+[2024-05-05 20:55:45,806][__main__][INFO] - Avg. coverage_useek: 75.43
+[2024-05-05 20:55:45,807][__main__][INFO] - Avg. inclusivity_useek: 87.85
+[2024-05-05 20:55:45,807][__main__][INFO] - Avg. DAS_unsup: 20.77
+[2024-05-05 20:55:45,808][__main__][INFO] - Avg. pose_error: mean: 58.12077589732806 median: 20.95192718598844
+[2024-05-05 21:31:15,741][__main__][INFO] - Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated,
+  Noisy, and Decimated Point Cloud Data (ICCV-2023)
+split: test
+task: generic
+key_points: 10
+batch_size: 8
+max_epoch: 40
+num_workers: 6
+class_name: airplane
+overlap_threshold: 0.05
+save_results: true
+parameters:
+  separation: 1
+  overlap: 1
+  shape: 6
+  consist: 1
+  volume: 1
+  pose: 0.07
+augmentation:
+  translation: false
+  rot_gravity: false
+  normalize_pc: true
+  gaussian_noise: false
+  down_sample: false
+  uniform_sampling: false
+lamda: 0
+lamda2: 0
+sample_points: 2048
+data:
+  annot_path: dataset/annotations/airplane.json
+  pcd_root: dataset/pcds
+  splits_root: dataset/splits
+  poses_root: dataset/poses
+  best_model_path: train/airplane/Best_airplane_10kp.pth
+
+[2024-05-05 21:32:45,347][__main__][INFO] - Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated,
+  Noisy, and Decimated Point Cloud Data (ICCV-2023)
+split: test
+task: generic
+key_points: 10
+batch_size: 8
+max_epoch: 40
+num_workers: 6
+class_name: airplane
+overlap_threshold: 0.05
+save_results: true
+parameters:
+  separation: 1
+  overlap: 1
+  shape: 6
+  consist: 1
+  volume: 1
+  pose: 0.07
+augmentation:
+  translation: false
+  rot_gravity: false
+  normalize_pc: true
+  gaussian_noise: false
+  down_sample: false
+  uniform_sampling: false
+lamda: 0
+lamda2: 0
+sample_points: 2048
+data:
+  annot_path: dataset/annotations/airplane.json
+  pcd_root: dataset/pcds
+  splits_root: dataset/splits
+  poses_root: dataset/poses
+  best_model_path: train/airplane/Best_airplane_10kp.pth
+
+[2024-05-05 21:34:20,254][__main__][INFO] - Avg. coverage_useek: 80.63
+[2024-05-05 21:34:20,255][__main__][INFO] - Avg. inclusivity_useek: 92.76
+[2024-05-05 21:34:20,255][__main__][INFO] - Avg. DAS_unsup: 20.23
+[2024-05-05 21:34:20,255][__main__][INFO] - Avg. pose_error: mean: 44.18146349959844 median: 15.0440288252235
+[2024-05-06 04:00:02,646][__main__][INFO] - Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated,
+  Noisy, and Decimated Point Cloud Data (ICCV-2023)
+split: test
+task: generic
+key_points: 10
+batch_size: 9
+max_epoch: 60
+num_workers: 6
+class_name: airplane
+overlap_threshold: 0.05
+save_results: true
+parameters:
+  separation: 1
+  overlap: 1
+  shape: 6
+  consist: 1
+  volume: 1
+  pose: 0.07
+augmentation:
+  translation: false
+  rot_gravity: false
+  normalize_pc: true
+  gaussian_noise: false
+  down_sample: false
+  uniform_sampling: false
+lamda: 0
+lamda2: 0
+sample_points: 2048
+data:
+  annot_path: dataset/annotations/airplane.json
+  pcd_root: dataset/pcds
+  splits_root: dataset/splits
+  poses_root: dataset/poses
+  best_model_path: train/airplane/Best_airplane_10kp.pth
+
+[2024-05-06 04:01:36,727][__main__][INFO] - Avg. coverage_useek: 82.21
+[2024-05-06 04:01:36,727][__main__][INFO] - Avg. inclusivity_useek: 93.56
+[2024-05-06 04:01:36,727][__main__][INFO] - Avg. DAS_unsup: 19.04
+[2024-05-06 04:01:36,728][__main__][INFO] - Avg. pose_error: mean: 29.60051617687268 median: 8.87206201200405
+[2024-05-06 06:40:13,232][__main__][INFO] - Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated,
+  Noisy, and Decimated Point Cloud Data (ICCV-2023)
+split: test
+task: generic
+key_points: 10
+batch_size: 26
+max_epoch: 100
+num_workers: 6
+class_name: airplane
+overlap_threshold: 0.05
+save_results: true
+parameters:
+  separation: 1
+  overlap: 1
+  shape: 6
+  consist: 1
+  volume: 1
+  pose: 0.07
+augmentation:
+  translation: false
+  rot_gravity: false
+  normalize_pc: true
+  gaussian_noise: false
+  down_sample: false
+  uniform_sampling: false
+lamda: 0
+lamda2: 0
+sample_points: 2048
+data:
+  annot_path: dataset/annotations/airplane.json
+  pcd_root: dataset/pcds
+  splits_root: dataset/splits
+  poses_root: dataset/poses
+  best_model_path: train/airplane/Best_airplane_10kp.pth
+
+[2024-05-06 06:41:43,246][__main__][INFO] - Avg. coverage_useek: 80.97
+[2024-05-06 06:41:43,247][__main__][INFO] - Avg. inclusivity_useek: 90.74
+[2024-05-06 06:41:43,247][__main__][INFO] - Avg. DAS_unsup: 22.57
+[2024-05-06 06:41:43,279][__main__][INFO] - Avg. pose_error: mean: 69.97666704538548 median: 30.912068221134327
+[2024-05-06 07:30:03,844][__main__][INFO] - Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated,
+  Noisy, and Decimated Point Cloud Data (ICCV-2023)
+split: test
+task: generic
+key_points: 10
+batch_size: 26
+max_epoch: 140
+num_workers: 6
+class_name: airplane
+overlap_threshold: 0.05
+save_results: true
+parameters:
+  separation: 1
+  overlap: 1
+  shape: 6
+  consist: 1
+  volume: 1
+  pose: 0.07
+augmentation:
+  translation: false
+  rot_gravity: false
+  normalize_pc: true
+  gaussian_noise: false
+  down_sample: false
+  uniform_sampling: false
+lamda: 0
+lamda2: 0
+sample_points: 2048
+data:
+  annot_path: dataset/annotations/airplane.json
+  pcd_root: dataset/pcds
+  splits_root: dataset/splits
+  poses_root: dataset/poses
+  best_model_path: train/airplane/Best_airplane_10kp.pth
+
+[2024-05-06 07:31:30,850][__main__][INFO] - Avg. coverage_useek: 81.56
+[2024-05-06 07:31:30,851][__main__][INFO] - Avg. inclusivity_useek: 88.33
+[2024-05-06 07:31:30,851][__main__][INFO] - Avg. DAS_unsup: 19.16
+[2024-05-06 07:31:30,851][__main__][INFO] - Avg. pose_error: mean: 61.62457260596663 median: 19.90342837087514

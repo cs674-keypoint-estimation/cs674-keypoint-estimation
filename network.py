@@ -6,7 +6,7 @@ import numpy as np
 import einops
 from torch.autograd import Variable
 from model import PointTransformerV3
-
+from model import PointTransformerV3_512
 
 
 def vector_gather(vectors, indices):
@@ -285,23 +285,23 @@ class Unsupervised_kpnet(nn.Module):
     """
     def __init__(self, cfg):
         super(Unsupervised_kpnet, self).__init__()
-        self.pointnet_encoder = PointNetfeat()
+        #self.pointnet_encoder = PointNetfeat()
         self.ptv3_encoder = PointTransformerV3()
         self.block1 = residual_block(1024, 512)
         self.block2 = residual_block(512, 256)
         self.conv23 = torch.nn.Conv1d(256, cfg.key_points, 1)
         self.softmax = nn.Softmax(dim=2)
-
+        self.gridsize = 0.03
     def forward(self, pc):
-        x = self.pointnet_encoder(pc.permute(0, 2, 1))   # [B x 1024 x 2048]
-        ptv3_dict = create_ptv3_dict(pc, pc, 0.05)
+        #x = self.pointnet_encoder(pc.permute(0, 2, 1))   # [B x 1024 x 2048]
+        ptv3_dict = create_ptv3_dict(pc, pc, self.gridsize)
         t = self.ptv3_encoder(ptv3_dict)
         batch_size = pc.size(0)
         num_points = pc.size(1)
         ptv3_output = t.feat.view(batch_size, -1, num_points)
         #exit()
         # Down-sampling from 1024 to M key-points
-        x = self.block1(x)          # [B x 512 x 2048]
+        x = self.block1(ptv3_output)          # [B x 512 x 2048]
         x = self.block2(x)          # [B x 256 x 2048]
         x = self.conv23(x)          # [B x cfg.key_points x 2048]
         x = self.softmax(x)          # [B x cfg.key_points x 2048] => [B x cfg.key_points x 2048{0 to 1}]

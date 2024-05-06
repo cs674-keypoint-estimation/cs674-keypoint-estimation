@@ -1,10 +1,10 @@
 Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated,
   Noisy, and Decimated Point Cloud Data (ICCV-2023)
 split: train
-task: canonical
+task: generic
 key_points: 10
-batch_size: 26
-max_epoch: 5
+batch_size: 18
+max_epoch: 200
 num_workers: 6
 class_name: airplane
 overlap_threshold: 0.05
@@ -22,6 +22,7 @@ augmentation:
   normalize_pc: true
   gaussian_noise: false
   down_sample: false
+  uniform_sampling: false
 lamda: 0
 lamda2: 0
 sample_points: 2048

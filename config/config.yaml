@@ -3,8 +3,8 @@ Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated
 split: train
 task: generic
 key_points: 10
-batch_size: 26
-max_epoch: 5
+batch_size: 18
+max_epoch: 200
 num_workers: 6
 class_name: airplane
 overlap_threshold: 0.05 # 0.05

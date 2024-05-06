@@ -129,18 +129,18 @@ hydra:
   runtime:
     version: 1.3.2
     version_base: '1.3'
-    cwd: /Users/matt/Desktop/CS 674/project/SC3K
+    cwd: /mnt/c/Users/erran/OneDrive/Documents/GitHub/cs674-keypoint-estimation
     config_sources:
     - path: hydra.conf
       schema: pkg
       provider: hydra
-    - path: /Users/matt/Desktop/CS 674/project/SC3K/config
+    - path: /mnt/c/Users/erran/OneDrive/Documents/GitHub/cs674-keypoint-estimation/config
       schema: file
       provider: main
     - path: ''
       schema: structured
       provider: schema
-    output_dir: /Users/matt/Desktop/CS 674/project/SC3K/train/airplane
+    output_dir: /mnt/c/Users/erran/OneDrive/Documents/GitHub/cs674-keypoint-estimation/train/airplane
     choices:
       hydra/env: default
       hydra/callbacks: null

@@ -6,12 +6,15 @@ import data_loader as dataset
 from utils import AverageMeter
 import utils as function_bank
 import network
+
+
 from torch.utils.tensorboard import SummaryWriter
 
 import logging
 logger = logging.getLogger(__name__)
 
 def train(cfg):
+    torch.cuda.empty_cache()    
     writer = SummaryWriter("train_summary")
 
     KeypointDataset = getattr(dataset, 'generic_data_loader')
@@ -50,6 +53,8 @@ def train(cfg):
             meter.update(loss.item())
             writer.add_scalar('train_loss/overall', loss, train_step)  # write training loss
             train_step += 1  # increment in train_step
+
+                    
 
         train_loss = meter.avg
         logger.info(f'Epoch: {epoch}, Average Train loss: {meter.avg}')
