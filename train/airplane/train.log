@@ -4151,3 +4151,479 @@ log_path: generic_logs
 [2024-05-06 10:24:52,991][__main__][INFO] - Epoch: 17, Average Train loss: 210.54046792655737
 [2024-05-06 10:24:55,469][__main__][INFO] - best epoch: 17
 [2024-05-06 10:24:57,526][__main__][INFO] - Epoch: 17, Average Val loss: 594.1984183278636
+[2024-05-06 10:25:08,705][__main__][INFO] - Epoch: 18, Average Train loss: 188.41622705131323
+[2024-05-06 10:25:09,793][__main__][INFO] - Epoch: 18, Average Val loss: 698.2892081227855
+[2024-05-06 10:25:18,068][__main__][INFO] - Epoch: 19, Average Train loss: 196.45991296439917
+[2024-05-06 10:25:19,133][__main__][INFO] - Epoch: 19, Average Val loss: 693.6922537770823
+[2024-05-06 10:25:27,490][__main__][INFO] - Epoch: 20, Average Train loss: 139.2716552701548
+[2024-05-06 10:25:28,587][__main__][INFO] - best epoch: 20
+[2024-05-06 10:25:30,619][__main__][INFO] - Epoch: 20, Average Val loss: 423.8264395680979
+[2024-05-06 10:25:38,705][__main__][INFO] - Epoch: 21, Average Train loss: 100.69958419471537
+[2024-05-06 10:25:39,793][__main__][INFO] - Epoch: 21, Average Val loss: 575.1384207692698
+[2024-05-06 10:25:49,120][__main__][INFO] - Epoch: 22, Average Train loss: 128.20626849799905
+[2024-05-06 10:25:50,205][__main__][INFO] - Epoch: 22, Average Val loss: 595.283714958723
+[2024-05-06 10:25:58,494][__main__][INFO] - Epoch: 23, Average Train loss: 74.86723489433084
+[2024-05-06 10:25:59,573][__main__][INFO] - Epoch: 23, Average Val loss: 488.6213004079417
+[2024-05-06 10:26:08,136][__main__][INFO] - Epoch: 24, Average Train loss: 70.46875543266093
+[2024-05-06 10:26:09,279][__main__][INFO] - best epoch: 24
+[2024-05-06 10:26:11,251][__main__][INFO] - Epoch: 24, Average Val loss: 416.51119298606665
+[2024-05-06 10:26:19,622][__main__][INFO] - Epoch: 25, Average Train loss: 74.55870170264994
+[2024-05-06 10:26:20,746][__main__][INFO] - Epoch: 25, Average Val loss: 445.2962424245432
+[2024-05-06 10:26:28,718][__main__][INFO] - Epoch: 26, Average Train loss: 51.726953693921885
+[2024-05-06 10:26:29,861][__main__][INFO] - Epoch: 26, Average Val loss: 455.4565665212229
+[2024-05-06 10:26:38,306][__main__][INFO] - Epoch: 27, Average Train loss: 61.9935848203257
+[2024-05-06 10:26:39,383][__main__][INFO] - Epoch: 27, Average Val loss: 430.6636435475901
+[2024-05-06 10:26:47,620][__main__][INFO] - Epoch: 28, Average Train loss: 55.51834315925392
+[2024-05-06 10:26:48,751][__main__][INFO] - Epoch: 28, Average Val loss: 426.73241490989477
+[2024-05-06 10:26:56,837][__main__][INFO] - Epoch: 29, Average Train loss: 38.565580078657
+[2024-05-06 10:26:58,112][__main__][INFO] - best epoch: 29
+[2024-05-06 10:27:00,106][__main__][INFO] - Epoch: 29, Average Val loss: 401.36791295676977
+[2024-05-06 10:27:08,624][__main__][INFO] - Epoch: 30, Average Train loss: 50.31315583854469
+[2024-05-06 10:27:09,748][__main__][INFO] - Epoch: 30, Average Val loss: 553.1150748220042
+[2024-05-06 10:27:18,904][__main__][INFO] - Epoch: 31, Average Train loss: 43.62298769622596
+[2024-05-06 10:27:19,983][__main__][INFO] - Epoch: 31, Average Val loss: 433.1601798024729
+[2024-05-06 10:27:28,042][__main__][INFO] - Epoch: 32, Average Train loss: 26.581903168256613
+[2024-05-06 10:27:29,112][__main__][INFO] - Epoch: 32, Average Val loss: 486.2734000173167
+[2024-05-06 10:27:37,736][__main__][INFO] - Epoch: 33, Average Train loss: 36.194355198438494
+[2024-05-06 10:27:38,975][__main__][INFO] - Epoch: 33, Average Val loss: 605.5999991384105
+[2024-05-06 10:27:47,138][__main__][INFO] - Epoch: 34, Average Train loss: 29.347506591375204
+[2024-05-06 10:27:48,245][__main__][INFO] - Epoch: 34, Average Val loss: 476.748329826887
+[2024-05-06 10:27:56,204][__main__][INFO] - Epoch: 35, Average Train loss: 26.003694721753927
+[2024-05-06 10:27:57,276][__main__][INFO] - Epoch: 35, Average Val loss: 540.3013693776683
+[2024-05-06 10:28:05,366][__main__][INFO] - Epoch: 36, Average Train loss: 27.21510941654
+[2024-05-06 10:28:09,412][__main__][INFO] - Epoch: 36, Average Val loss: 551.3698660817698
+[2024-05-06 10:28:17,737][__main__][INFO] - Epoch: 37, Average Train loss: 27.213438459928366
+[2024-05-06 10:28:18,842][__main__][INFO] - Epoch: 37, Average Val loss: 574.5255972829417
+[2024-05-06 10:28:26,791][__main__][INFO] - Epoch: 38, Average Train loss: 30.577705093915792
+[2024-05-06 10:28:27,861][__main__][INFO] - Epoch: 38, Average Val loss: 628.9534232106761
+[2024-05-06 10:28:35,748][__main__][INFO] - Epoch: 39, Average Train loss: 25.2849997964457
+[2024-05-06 10:28:36,818][__main__][INFO] - Epoch: 39, Average Val loss: 539.6287466970042
+[2024-05-06 10:28:44,587][__main__][INFO] - Epoch: 40, Average Train loss: 24.20388145118508
+[2024-05-06 10:28:45,674][__main__][INFO] - Epoch: 40, Average Val loss: 570.0565115895823
+[2024-05-06 10:28:53,515][__main__][INFO] - Epoch: 41, Average Train loss: 21.706111499364706
+[2024-05-06 10:28:54,584][__main__][INFO] - Epoch: 41, Average Val loss: 500.690956780012
+[2024-05-06 10:29:02,428][__main__][INFO] - Epoch: 42, Average Train loss: 18.829684325750204
+[2024-05-06 10:29:03,486][__main__][INFO] - Epoch: 42, Average Val loss: 549.8804861989573
+[2024-05-06 10:29:11,200][__main__][INFO] - Epoch: 43, Average Train loss: 19.523878523404928
+[2024-05-06 10:29:12,293][__main__][INFO] - Epoch: 43, Average Val loss: 548.0993124929026
+[2024-05-06 10:29:20,203][__main__][INFO] - Epoch: 44, Average Train loss: 18.692237445409628
+[2024-05-06 10:29:21,277][__main__][INFO] - Epoch: 44, Average Val loss: 440.6525351491526
+[2024-05-06 10:29:29,026][__main__][INFO] - Epoch: 45, Average Train loss: 16.65901286273751
+[2024-05-06 10:29:30,102][__main__][INFO] - Epoch: 45, Average Val loss: 445.6014182057932
+[2024-05-06 10:29:39,357][__main__][INFO] - Epoch: 46, Average Train loss: 16.685672232206198
+[2024-05-06 10:29:40,428][__main__][INFO] - Epoch: 46, Average Val loss: 427.97974462180883
+[2024-05-06 10:29:48,560][__main__][INFO] - Epoch: 47, Average Train loss: 16.071226784284445
+[2024-05-06 10:29:49,665][__main__][INFO] - Epoch: 47, Average Val loss: 492.43351049094946
+[2024-05-06 10:29:57,941][__main__][INFO] - Epoch: 48, Average Train loss: 17.07672376304421
+[2024-05-06 10:29:59,067][__main__][INFO] - Epoch: 48, Average Val loss: 452.07807225852764
+[2024-05-06 10:30:09,408][__main__][INFO] - Epoch: 49, Average Train loss: 17.569617935712667
+[2024-05-06 10:30:10,514][__main__][INFO] - Epoch: 49, Average Val loss: 453.4603812184886
+[2024-05-06 10:30:18,775][__main__][INFO] - Epoch: 50, Average Train loss: 15.423131057317587
+[2024-05-06 10:30:19,955][__main__][INFO] - Epoch: 50, Average Val loss: 526.1869742360667
+[2024-05-06 10:30:28,753][__main__][INFO] - Epoch: 51, Average Train loss: 14.895721503789755
+[2024-05-06 10:30:29,897][__main__][INFO] - Epoch: 51, Average Val loss: 509.49025792747295
+[2024-05-06 10:30:38,314][__main__][INFO] - Epoch: 52, Average Train loss: 15.131812402303549
+[2024-05-06 10:30:39,597][__main__][INFO] - Epoch: 52, Average Val loss: 473.8793875661448
+[2024-05-06 10:30:49,742][__main__][INFO] - Epoch: 53, Average Train loss: 13.852086016233297
+[2024-05-06 10:30:50,868][__main__][INFO] - Epoch: 53, Average Val loss: 609.9429861989573
+[2024-05-06 10:30:59,408][__main__][INFO] - Epoch: 54, Average Train loss: 15.025593468244406
+[2024-05-06 10:31:00,491][__main__][INFO] - Epoch: 54, Average Val loss: 411.18013829856665
+[2024-05-06 10:31:09,117][__main__][INFO] - Epoch: 55, Average Train loss: 11.793256589467852
+[2024-05-06 10:31:10,331][__main__][INFO] - Epoch: 55, Average Val loss: 607.165795036848
+[2024-05-06 10:31:18,244][__main__][INFO] - Epoch: 56, Average Train loss: 15.505394646222921
+[2024-05-06 10:31:19,344][__main__][INFO] - Epoch: 56, Average Val loss: 517.2837759938792
+[2024-05-06 10:31:27,514][__main__][INFO] - Epoch: 57, Average Train loss: 12.961420127446978
+[2024-05-06 10:31:28,594][__main__][INFO] - Epoch: 57, Average Val loss: 591.009056755598
+[2024-05-06 10:31:36,782][__main__][INFO] - Epoch: 58, Average Train loss: 12.690832683141561
+[2024-05-06 10:31:37,871][__main__][INFO] - Epoch: 58, Average Val loss: 474.70612401634014
+[2024-05-06 10:31:45,850][__main__][INFO] - Epoch: 59, Average Train loss: 12.386506268079607
+[2024-05-06 10:31:46,990][__main__][INFO] - Epoch: 59, Average Val loss: 570.152123161848
+[2024-05-06 10:31:55,201][__main__][INFO] - Epoch: 60, Average Train loss: 12.88700253635201
+[2024-05-06 10:31:56,360][__main__][INFO] - Epoch: 60, Average Val loss: 590.6196829763011
+[2024-05-06 10:32:04,502][__main__][INFO] - Epoch: 61, Average Train loss: 13.662903615529867
+[2024-05-06 10:32:05,589][__main__][INFO] - Epoch: 61, Average Val loss: 441.48578710227764
+[2024-05-06 10:32:13,687][__main__][INFO] - Epoch: 62, Average Train loss: 14.34855563312325
+[2024-05-06 10:32:14,792][__main__][INFO] - Epoch: 62, Average Val loss: 583.1700369802073
+[2024-05-06 10:32:22,965][__main__][INFO] - Epoch: 63, Average Train loss: 10.242036947305529
+[2024-05-06 10:32:24,080][__main__][INFO] - Epoch: 63, Average Val loss: 562.8165518727855
+[2024-05-06 10:32:32,180][__main__][INFO] - Epoch: 64, Average Train loss: 11.242482134397356
+[2024-05-06 10:32:33,282][__main__][INFO] - Epoch: 64, Average Val loss: 603.2934500661448
+[2024-05-06 10:32:41,518][__main__][INFO] - Epoch: 65, Average Train loss: 11.085732647474138
+[2024-05-06 10:32:42,614][__main__][INFO] - Epoch: 65, Average Val loss: 580.578392693098
+[2024-05-06 10:32:50,722][__main__][INFO] - Epoch: 66, Average Train loss: 10.710734733636706
+[2024-05-06 10:32:51,803][__main__][INFO] - Epoch: 66, Average Val loss: 639.0678030934886
+[2024-05-06 10:32:59,828][__main__][INFO] - Epoch: 67, Average Train loss: 10.719873735006182
+[2024-05-06 10:33:00,930][__main__][INFO] - Epoch: 67, Average Val loss: 641.1778189626292
+[2024-05-06 10:33:09,191][__main__][INFO] - Epoch: 68, Average Train loss: 10.924333640630572
+[2024-05-06 10:33:10,397][__main__][INFO] - Epoch: 68, Average Val loss: 634.0118948903636
+[2024-05-06 10:33:18,438][__main__][INFO] - Epoch: 69, Average Train loss: 10.75663883357796
+[2024-05-06 10:33:19,527][__main__][INFO] - Epoch: 69, Average Val loss: 556.8141409841136
+[2024-05-06 10:33:27,527][__main__][INFO] - Epoch: 70, Average Train loss: 9.909932383592455
+[2024-05-06 10:33:28,728][__main__][INFO] - Epoch: 70, Average Val loss: 618.5683524098948
+[2024-05-06 10:33:36,938][__main__][INFO] - Epoch: 71, Average Train loss: 10.671688565309374
+[2024-05-06 10:33:38,086][__main__][INFO] - Epoch: 71, Average Val loss: 596.7965170827464
+[2024-05-06 10:33:46,203][__main__][INFO] - Epoch: 72, Average Train loss: 10.917500444944231
+[2024-05-06 10:33:47,299][__main__][INFO] - Epoch: 72, Average Val loss: 577.3373648610667
+[2024-05-06 10:33:55,289][__main__][INFO] - Epoch: 73, Average Train loss: 10.833825775678484
+[2024-05-06 10:33:56,484][__main__][INFO] - Epoch: 73, Average Val loss: 511.5931021657542
+[2024-05-06 10:34:04,617][__main__][INFO] - Epoch: 74, Average Train loss: 11.5675771322802
+[2024-05-06 10:34:05,728][__main__][INFO] - Epoch: 74, Average Val loss: 588.5059744802073
+[2024-05-06 10:34:13,830][__main__][INFO] - Epoch: 75, Average Train loss: 9.79189319282326
+[2024-05-06 10:34:14,955][__main__][INFO] - Epoch: 75, Average Val loss: 537.6703116384105
+[2024-05-06 10:34:22,849][__main__][INFO] - Epoch: 76, Average Train loss: 10.334056803281634
+[2024-05-06 10:34:23,947][__main__][INFO] - Epoch: 76, Average Val loss: 550.1349112477855
+[2024-05-06 10:34:32,076][__main__][INFO] - Epoch: 77, Average Train loss: 10.297145613725512
+[2024-05-06 10:34:33,201][__main__][INFO] - Epoch: 77, Average Val loss: 562.263451286848
+[2024-05-06 10:34:41,346][__main__][INFO] - Epoch: 78, Average Train loss: 9.530023345048754
+[2024-05-06 10:34:42,394][__main__][INFO] - Epoch: 78, Average Val loss: 599.7474142995433
+[2024-05-06 10:34:50,596][__main__][INFO] - Epoch: 79, Average Train loss: 9.70601386695656
+[2024-05-06 10:34:51,677][__main__][INFO] - Epoch: 79, Average Val loss: 619.8457571950511
+[2024-05-06 10:34:59,705][__main__][INFO] - Epoch: 80, Average Train loss: 10.286968835885851
+[2024-05-06 10:35:00,787][__main__][INFO] - Epoch: 80, Average Val loss: 547.8885123220042
+[2024-05-06 10:35:08,797][__main__][INFO] - Epoch: 81, Average Train loss: 9.987011024053423
+[2024-05-06 10:35:09,949][__main__][INFO] - Epoch: 81, Average Val loss: 601.1241995778636
+[2024-05-06 10:35:18,036][__main__][INFO] - Epoch: 82, Average Train loss: 9.47644276290688
+[2024-05-06 10:35:19,143][__main__][INFO] - Epoch: 82, Average Val loss: 633.7709891286448
+[2024-05-06 10:35:27,384][__main__][INFO] - Epoch: 83, Average Train loss: 11.507200368936388
+[2024-05-06 10:35:28,496][__main__][INFO] - Epoch: 83, Average Val loss: 529.0620963063792
+[2024-05-06 10:35:36,692][__main__][INFO] - Epoch: 84, Average Train loss: 9.70263172059807
+[2024-05-06 10:35:37,828][__main__][INFO] - Epoch: 84, Average Val loss: 595.6809622731761
+[2024-05-06 10:35:46,009][__main__][INFO] - Epoch: 85, Average Train loss: 10.18192208677086
+[2024-05-06 10:35:47,130][__main__][INFO] - Epoch: 85, Average Val loss: 553.7924124684886
+[2024-05-06 10:35:55,124][__main__][INFO] - Epoch: 86, Average Train loss: 8.951182433660357
+[2024-05-06 10:35:56,229][__main__][INFO] - Epoch: 86, Average Val loss: 625.8090140309886
+[2024-05-06 10:36:04,289][__main__][INFO] - Epoch: 87, Average Train loss: 10.161524006421892
+[2024-05-06 10:36:05,449][__main__][INFO] - Epoch: 87, Average Val loss: 494.6304556813792
+[2024-05-06 10:36:13,567][__main__][INFO] - Epoch: 88, Average Train loss: 9.1470671382502
+[2024-05-06 10:36:14,704][__main__][INFO] - Epoch: 88, Average Val loss: 639.209984489973
+[2024-05-06 10:36:22,825][__main__][INFO] - Epoch: 89, Average Train loss: 9.385684916074602
+[2024-05-06 10:36:23,905][__main__][INFO] - Epoch: 89, Average Val loss: 602.6626822438792
+[2024-05-06 10:36:32,048][__main__][INFO] - Epoch: 90, Average Train loss: 9.60993141799721
+[2024-05-06 10:36:33,128][__main__][INFO] - Epoch: 90, Average Val loss: 577.1380850759105
+[2024-05-06 10:36:41,006][__main__][INFO] - Epoch: 91, Average Train loss: 8.379483529622881
+[2024-05-06 10:36:42,119][__main__][INFO] - Epoch: 91, Average Val loss: 593.588890739973
+[2024-05-06 10:36:50,010][__main__][INFO] - Epoch: 92, Average Train loss: 9.111176797445149
+[2024-05-06 10:36:51,084][__main__][INFO] - Epoch: 92, Average Val loss: 611.558861443098
+[2024-05-06 10:36:59,288][__main__][INFO] - Epoch: 93, Average Train loss: 9.080876239831774
+[2024-05-06 10:37:00,393][__main__][INFO] - Epoch: 93, Average Val loss: 616.9906546559886
+[2024-05-06 10:37:08,417][__main__][INFO] - Epoch: 94, Average Train loss: 8.584414907987444
+[2024-05-06 10:37:09,756][__main__][INFO] - Epoch: 94, Average Val loss: 605.4034354177073
+[2024-05-06 10:37:17,837][__main__][INFO] - Epoch: 95, Average Train loss: 8.3119875875071
+[2024-05-06 10:37:18,993][__main__][INFO] - Epoch: 95, Average Val loss: 652.5137259450511
+[2024-05-06 10:37:27,251][__main__][INFO] - Epoch: 96, Average Train loss: 9.065634974534838
+[2024-05-06 10:37:28,340][__main__][INFO] - Epoch: 96, Average Val loss: 643.6020438161448
+[2024-05-06 10:37:36,526][__main__][INFO] - Epoch: 97, Average Train loss: 7.805211910302966
+[2024-05-06 10:37:37,606][__main__][INFO] - Epoch: 97, Average Val loss: 631.247338005598
+[2024-05-06 10:44:07,121][__main__][INFO] - Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated,
+  Noisy, and Decimated Point Cloud Data (ICCV-2023)
+split: train
+task: generic
+key_points: 10
+batch_size: 26
+max_epoch: 200
+num_workers: 6
+class_name: airplane
+overlap_threshold: 0.05
+save_results: true
+parameters:
+  separation: 1
+  overlap: 1
+  shape: 6
+  consist: 1
+  volume: 1
+  pose: 0.07
+augmentation:
+  translation: false
+  rot_gravity: false
+  normalize_pc: true
+  gaussian_noise: false
+  down_sample: false
+  uniform_sampling: false
+lamda: 0
+lamda2: 0
+sample_points: 2048
+data:
+  annot_path: dataset/annotations/airplane.json
+  pcd_root: dataset/pcds
+  splits_root: dataset/splits
+  poses_root: dataset/poses
+  best_model_path: train/airplane/Best_airplane_10kp.pth
+log_path: generic_logs
+
+[2024-05-06 10:57:05,943][__main__][INFO] - Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated,
+  Noisy, and Decimated Point Cloud Data (ICCV-2023)
+split: train
+task: generic
+key_points: 10
+batch_size: 26
+max_epoch: 200
+num_workers: 6
+class_name: airplane
+overlap_threshold: 0.05
+save_results: true
+parameters:
+  separation: 1
+  overlap: 1
+  shape: 6
+  consist: 1
+  volume: 1
+  pose: 0.07
+augmentation:
+  translation: false
+  rot_gravity: false
+  normalize_pc: true
+  gaussian_noise: false
+  down_sample: false
+  uniform_sampling: false
+lamda: 0
+lamda2: 0
+sample_points: 2048
+data:
+  annot_path: dataset/annotations/airplane.json
+  pcd_root: dataset/pcds
+  splits_root: dataset/splits
+  poses_root: dataset/poses
+  best_model_path: train/airplane/Best_airplane_10kp.pth
+log_path: generic_logs
+
+[2024-05-06 10:57:33,552][__main__][INFO] - Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated,
+  Noisy, and Decimated Point Cloud Data (ICCV-2023)
+split: train
+task: generic
+key_points: 10
+batch_size: 26
+max_epoch: 200
+num_workers: 6
+class_name: airplane
+overlap_threshold: 0.05
+save_results: true
+parameters:
+  separation: 1
+  overlap: 1
+  shape: 6
+  consist: 1
+  volume: 1
+  pose: 0.07
+augmentation:
+  translation: false
+  rot_gravity: false
+  normalize_pc: true
+  gaussian_noise: false
+  down_sample: false
+  uniform_sampling: false
+lamda: 0
+lamda2: 0
+sample_points: 2048
+data:
+  annot_path: dataset/annotations/airplane.json
+  pcd_root: dataset/pcds
+  splits_root: dataset/splits
+  poses_root: dataset/poses
+  best_model_path: train/airplane/Best_airplane_10kp.pth
+log_path: generic_logs
+
+[2024-05-06 10:57:46,246][__main__][INFO] - Epoch: 0, Average Train loss: 4795.631523796613
+[2024-05-06 10:57:47,073][__main__][INFO] - best epoch: 0
+[2024-05-06 10:58:03,248][__main__][INFO] - Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated,
+  Noisy, and Decimated Point Cloud Data (ICCV-2023)
+split: train
+task: generic
+key_points: 10
+batch_size: 26
+max_epoch: 200
+num_workers: 6
+class_name: airplane
+overlap_threshold: 0.05
+save_results: true
+parameters:
+  separation: 1
+  overlap: 1
+  shape: 6
+  consist: 1
+  volume: 1
+  pose: 0.07
+augmentation:
+  translation: false
+  rot_gravity: false
+  normalize_pc: true
+  gaussian_noise: false
+  down_sample: false
+  uniform_sampling: false
+lamda: 0
+lamda2: 0
+sample_points: 2048
+data:
+  annot_path: dataset/annotations/airplane.json
+  pcd_root: dataset/pcds
+  splits_root: dataset/splits
+  poses_root: dataset/poses
+  best_model_path: train/airplane/Best_airplane_10kp.pth
+log_path: generic_logs
+
+[2024-05-06 10:58:15,710][__main__][INFO] - Epoch: 0, Average Train loss: 4236.723519035871
+[2024-05-06 10:58:16,534][__main__][INFO] - best epoch: 0
+[2024-05-06 10:58:17,212][__main__][INFO] - Epoch: 0, Average Val loss: 2167.5909659352856
+[2024-05-06 10:58:22,624][__main__][INFO] - Epoch: 1, Average Train loss: 2611.672302910383
+[2024-05-06 10:58:23,546][__main__][INFO] - best epoch: 1
+[2024-05-06 10:58:24,205][__main__][INFO] - Epoch: 1, Average Val loss: 2116.5667349782543
+[2024-05-06 10:58:30,376][__main__][INFO] - Epoch: 2, Average Train loss: 2192.30492467552
+[2024-05-06 10:58:31,205][__main__][INFO] - best epoch: 2
+[2024-05-06 10:58:31,857][__main__][INFO] - Epoch: 2, Average Val loss: 2085.806908318098
+[2024-05-06 10:58:37,226][__main__][INFO] - Epoch: 3, Average Train loss: 2018.842766472395
+[2024-05-06 10:58:38,066][__main__][INFO] - best epoch: 3
+[2024-05-06 10:58:38,747][__main__][INFO] - Epoch: 3, Average Val loss: 2072.315880486067
+[2024-05-06 10:58:44,158][__main__][INFO] - Epoch: 4, Average Train loss: 1898.8061987844067
+[2024-05-06 10:58:45,056][__main__][INFO] - Epoch: 4, Average Val loss: 2113.1283194509106
+[2024-05-06 10:58:50,350][__main__][INFO] - Epoch: 5, Average Train loss: 1863.7372519460278
+[2024-05-06 10:58:51,220][__main__][INFO] - Epoch: 5, Average Val loss: 2522.7147452321606
+[2024-05-06 10:58:56,655][__main__][INFO] - Epoch: 6, Average Train loss: 1825.1439673390942
+[2024-05-06 10:58:57,554][__main__][INFO] - Epoch: 6, Average Val loss: 2696.5394522634106
+[2024-05-06 10:59:02,768][__main__][INFO] - Epoch: 7, Average Train loss: 1705.5361639943674
+[2024-05-06 10:59:03,606][__main__][INFO] - Epoch: 7, Average Val loss: 2664.108666130598
+[2024-05-06 10:59:08,821][__main__][INFO] - Epoch: 8, Average Train loss: 1598.8175742116525
+[2024-05-06 10:59:09,667][__main__][INFO] - Epoch: 8, Average Val loss: 2196.141380974348
+[2024-05-06 10:59:14,931][__main__][INFO] - Epoch: 9, Average Train loss: 1542.802330681379
+[2024-05-06 10:59:15,781][__main__][INFO] - best epoch: 9
+[2024-05-06 10:59:16,469][__main__][INFO] - Epoch: 9, Average Val loss: 2058.860069939192
+[2024-05-06 10:59:21,783][__main__][INFO] - Epoch: 10, Average Train loss: 1468.5513998952463
+[2024-05-06 10:59:22,634][__main__][INFO] - best epoch: 10
+[2024-05-06 10:59:23,279][__main__][INFO] - Epoch: 10, Average Val loss: 1793.9764639821603
+[2024-05-06 10:59:28,662][__main__][INFO] - Epoch: 11, Average Train loss: 1379.0573584523752
+[2024-05-06 10:59:29,511][__main__][INFO] - best epoch: 11
+[2024-05-06 10:59:30,170][__main__][INFO] - Epoch: 11, Average Val loss: 1448.0646597829416
+[2024-05-06 10:59:35,439][__main__][INFO] - Epoch: 12, Average Train loss: 1240.5983054128244
+[2024-05-06 10:59:36,288][__main__][INFO] - best epoch: 12
+[2024-05-06 10:59:36,961][__main__][INFO] - Epoch: 12, Average Val loss: 1292.5671622243478
+[2024-05-06 10:59:42,260][__main__][INFO] - Epoch: 13, Average Train loss: 1193.5847403493478
+[2024-05-06 10:59:43,087][__main__][INFO] - best epoch: 13
+[2024-05-06 10:59:43,736][__main__][INFO] - Epoch: 13, Average Val loss: 1284.3603751149728
+[2024-05-06 10:59:49,075][__main__][INFO] - Epoch: 14, Average Train loss: 1166.7092940297678
+[2024-05-06 10:59:49,939][__main__][INFO] - Epoch: 14, Average Val loss: 1363.380699822004
+[2024-05-06 10:59:55,211][__main__][INFO] - Epoch: 15, Average Train loss: 1054.5155302968576
+[2024-05-06 10:59:56,045][__main__][INFO] - Epoch: 15, Average Val loss: 1291.4687125173166
+[2024-05-06 11:00:01,256][__main__][INFO] - Epoch: 16, Average Train loss: 929.1943137136058
+[2024-05-06 11:00:02,123][__main__][INFO] - best epoch: 16
+[2024-05-06 11:00:02,816][__main__][INFO] - Epoch: 16, Average Val loss: 1262.816002556379
+[2024-05-06 11:00:08,420][__main__][INFO] - Epoch: 17, Average Train loss: 865.4764220204905
+[2024-05-06 11:00:09,274][__main__][INFO] - Epoch: 17, Average Val loss: 1291.8365714040353
+[2024-05-06 11:00:14,599][__main__][INFO] - Epoch: 18, Average Train loss: 808.970970818098
+[2024-05-06 11:00:15,520][__main__][INFO] - best epoch: 18
+[2024-05-06 11:00:16,172][__main__][INFO] - Epoch: 18, Average Val loss: 1200.1327139821603
+[2024-05-06 11:00:21,645][__main__][INFO] - Epoch: 19, Average Train loss: 701.2641951528148
+[2024-05-06 11:00:22,524][__main__][INFO] - best epoch: 19
+[2024-05-06 11:00:23,168][__main__][INFO] - Epoch: 19, Average Val loss: 1117.863121697004
+[2024-05-06 11:00:28,586][__main__][INFO] - Epoch: 20, Average Train loss: 639.0249945607737
+[2024-05-06 11:00:29,432][__main__][INFO] - best epoch: 20
+[2024-05-06 11:00:30,096][__main__][INFO] - Epoch: 20, Average Val loss: 1108.2402274098947
+[2024-05-06 11:00:35,340][__main__][INFO] - Epoch: 21, Average Train loss: 537.3203417745189
+[2024-05-06 11:00:36,155][__main__][INFO] - Epoch: 21, Average Val loss: 1181.915856072004
+[2024-05-06 11:00:41,428][__main__][INFO] - Epoch: 22, Average Train loss: 483.41144437461656
+[2024-05-06 11:00:42,288][__main__][INFO] - best epoch: 22
+[2024-05-06 11:00:42,986][__main__][INFO] - Epoch: 22, Average Val loss: 1096.081627556379
+[2024-05-06 11:00:48,261][__main__][INFO] - Epoch: 23, Average Train loss: 433.5288359609202
+[2024-05-06 11:00:49,093][__main__][INFO] - Epoch: 23, Average Val loss: 1117.2353140798166
+[2024-05-06 11:00:54,315][__main__][INFO] - Epoch: 24, Average Train loss: 328.2738425221995
+[2024-05-06 11:00:55,132][__main__][INFO] - best epoch: 24
+[2024-05-06 11:00:55,775][__main__][INFO] - Epoch: 24, Average Val loss: 981.0260550466135
+[2024-05-06 11:01:01,116][__main__][INFO] - Epoch: 25, Average Train loss: 267.63003224998266
+[2024-05-06 11:01:01,928][__main__][INFO] - best epoch: 25
+[2024-05-06 11:01:02,594][__main__][INFO] - Epoch: 25, Average Val loss: 973.5011832204416
+[2024-05-06 11:01:07,893][__main__][INFO] - Epoch: 26, Average Train loss: 216.60300607353
+[2024-05-06 11:01:08,717][__main__][INFO] - best epoch: 26
+[2024-05-06 11:01:09,369][__main__][INFO] - Epoch: 26, Average Val loss: 961.7427603688792
+[2024-05-06 11:01:14,645][__main__][INFO] - Epoch: 27, Average Train loss: 197.33767480521948
+[2024-05-06 11:01:15,500][__main__][INFO] - best epoch: 27
+[2024-05-06 11:01:16,176][__main__][INFO] - Epoch: 27, Average Val loss: 851.497338005598
+[2024-05-06 11:01:21,491][__main__][INFO] - Epoch: 28, Average Train loss: 144.35902948051248
+[2024-05-06 11:01:22,316][__main__][INFO] - best epoch: 28
+[2024-05-06 11:01:22,971][__main__][INFO] - Epoch: 28, Average Val loss: 815.2983023610667
+[2024-05-06 11:01:28,366][__main__][INFO] - Epoch: 29, Average Train loss: 117.0911991086558
+[2024-05-06 11:01:29,235][__main__][INFO] - best epoch: 29
+[2024-05-06 11:01:29,890][__main__][INFO] - Epoch: 29, Average Val loss: 800.9432608571605
+[2024-05-06 11:01:35,868][__main__][INFO] - Epoch: 30, Average Train loss: 115.00587339072977
+[2024-05-06 11:01:36,837][__main__][INFO] - Epoch: 30, Average Val loss: 849.8155447927073
+[2024-05-06 11:01:42,401][__main__][INFO] - Epoch: 31, Average Train loss: 101.04567117362772
+[2024-05-06 11:01:43,288][__main__][INFO] - Epoch: 31, Average Val loss: 801.037865349348
+[2024-05-06 11:01:48,771][__main__][INFO] - Epoch: 32, Average Train loss: 77.24533528953349
+[2024-05-06 11:01:49,617][__main__][INFO] - best epoch: 32
+[2024-05-06 11:01:50,279][__main__][INFO] - Epoch: 32, Average Val loss: 736.9075247731761
+[2024-05-06 11:01:55,590][__main__][INFO] - Epoch: 33, Average Train loss: 70.52150530486855
+[2024-05-06 11:01:56,439][__main__][INFO] - best epoch: 33
+[2024-05-06 11:01:57,092][__main__][INFO] - Epoch: 33, Average Val loss: 619.9860770192698
+[2024-05-06 11:02:02,311][__main__][INFO] - Epoch: 34, Average Train loss: 71.15752143531594
+[2024-05-06 11:02:03,185][__main__][INFO] - Epoch: 34, Average Val loss: 699.6146170583323
+[2024-05-06 11:02:08,469][__main__][INFO] - Epoch: 35, Average Train loss: 67.97920508056437
+[2024-05-06 11:02:09,303][__main__][INFO] - Epoch: 35, Average Val loss: 641.2801444020823
+[2024-05-06 11:02:14,608][__main__][INFO] - Epoch: 36, Average Train loss: 56.57058806091102
+[2024-05-06 11:02:15,462][__main__][INFO] - best epoch: 36
+[2024-05-06 11:02:16,102][__main__][INFO] - Epoch: 36, Average Val loss: 574.3537528005198
+[2024-05-06 11:02:21,375][__main__][INFO] - Epoch: 37, Average Train loss: 53.995227285917125
+[2024-05-06 11:02:22,220][__main__][INFO] - Epoch: 37, Average Val loss: 629.8415457692698
+[2024-05-06 11:02:27,729][__main__][INFO] - Epoch: 38, Average Train loss: 54.42310876518043
+[2024-05-06 11:02:28,620][__main__][INFO] - Epoch: 38, Average Val loss: 643.8541495290355
+[2024-05-06 11:02:34,225][__main__][INFO] - Epoch: 39, Average Train loss: 54.38782424598487
+[2024-05-06 11:02:35,107][__main__][INFO] - Epoch: 39, Average Val loss: 616.6591727223948
+[2024-05-06 11:02:40,396][__main__][INFO] - Epoch: 40, Average Train loss: 51.22424335151466
+[2024-05-06 11:02:41,250][__main__][INFO] - Epoch: 40, Average Val loss: 597.5392081227855
+[2024-05-06 11:02:46,541][__main__][INFO] - Epoch: 41, Average Train loss: 52.73470396667274
+[2024-05-06 11:02:47,380][__main__][INFO] - best epoch: 41
+[2024-05-06 11:02:48,080][__main__][INFO] - Epoch: 41, Average Val loss: 550.8753287282542
+[2024-05-06 11:02:53,494][__main__][INFO] - Epoch: 42, Average Train loss: 52.298617073591075
+[2024-05-06 11:02:54,341][__main__][INFO] - Epoch: 42, Average Val loss: 592.4745108571605
+[2024-05-06 11:02:59,614][__main__][INFO] - Epoch: 43, Average Train loss: 50.87390727668556
+[2024-05-06 11:03:00,480][__main__][INFO] - Epoch: 43, Average Val loss: 570.4581229177073
+[2024-05-06 11:03:05,801][__main__][INFO] - Epoch: 44, Average Train loss: 49.17799920707496
+[2024-05-06 11:03:06,655][__main__][INFO] - Epoch: 44, Average Val loss: 618.5633170095042
+[2024-05-06 11:03:11,998][__main__][INFO] - Epoch: 45, Average Train loss: 45.5799397912577
+[2024-05-06 11:03:12,829][__main__][INFO] - Epoch: 45, Average Val loss: 573.106224724348
+[2024-05-06 11:03:18,254][__main__][INFO] - Epoch: 46, Average Train loss: 42.33008522659095
+[2024-05-06 11:03:19,121][__main__][INFO] - best epoch: 46
+[2024-05-06 11:03:19,784][__main__][INFO] - Epoch: 46, Average Val loss: 539.3631369557933
+[2024-05-06 11:03:25,402][__main__][INFO] - Epoch: 47, Average Train loss: 37.265307137067644
+[2024-05-06 11:03:26,247][__main__][INFO] - Epoch: 47, Average Val loss: 546.8027121511058
+[2024-05-06 11:03:31,453][__main__][INFO] - Epoch: 48, Average Train loss: 34.86552614837441
+[2024-05-06 11:03:32,292][__main__][INFO] - Epoch: 48, Average Val loss: 552.9722372975901
+[2024-05-06 11:03:37,622][__main__][INFO] - Epoch: 49, Average Train loss: 31.409759232099386
+[2024-05-06 11:03:38,436][__main__][INFO] - Epoch: 49, Average Val loss: 547.0079276052073
+[2024-05-06 11:03:43,840][__main__][INFO] - Epoch: 50, Average Train loss: 39.43787307410988
+[2024-05-06 11:03:44,678][__main__][INFO] - Epoch: 50, Average Val loss: 582.1246268239573
+[2024-05-06 11:03:50,155][__main__][INFO] - Epoch: 51, Average Train loss: 29.3402679648951
+[2024-05-06 11:03:51,038][__main__][INFO] - best epoch: 51
+[2024-05-06 11:03:51,649][__main__][INFO] - Epoch: 51, Average Val loss: 498.2166068044261
+[2024-05-06 11:03:57,070][__main__][INFO] - Epoch: 52, Average Train loss: 31.51229757934365
+[2024-05-06 11:03:57,906][__main__][INFO] - best epoch: 52
+[2024-05-06 11:03:58,557][__main__][INFO] - Epoch: 52, Average Val loss: 473.25093907981665
+[2024-05-06 11:04:03,867][__main__][INFO] - Epoch: 53, Average Train loss: 35.69435448318276
+[2024-05-06 11:04:04,742][__main__][INFO] - best epoch: 53
+[2024-05-06 11:04:05,387][__main__][INFO] - Epoch: 53, Average Val loss: 469.6841971364573
+[2024-05-06 11:04:10,634][__main__][INFO] - Epoch: 54, Average Train loss: 28.82342559963021
+[2024-05-06 11:04:11,483][__main__][INFO] - best epoch: 54
+[2024-05-06 11:04:12,135][__main__][INFO] - Epoch: 54, Average Val loss: 432.1393820729807
+[2024-05-06 11:04:17,575][__main__][INFO] - Epoch: 55, Average Train loss: 29.81888503700051
+[2024-05-06 11:04:18,533][__main__][INFO] - Epoch: 55, Average Val loss: 462.89908666282446
+[2024-05-06 11:04:23,875][__main__][INFO] - Epoch: 56, Average Train loss: 34.2554211106852
+[2024-05-06 11:04:24,698][__main__][INFO] - Epoch: 56, Average Val loss: 479.6864706960276
+[2024-05-06 11:04:29,931][__main__][INFO] - Epoch: 57, Average Train loss: 25.157212802465292
+[2024-05-06 11:04:30,778][__main__][INFO] - best epoch: 57
+[2024-05-06 11:04:31,423][__main__][INFO] - Epoch: 57, Average Val loss: 418.61217565208227
+[2024-05-06 11:04:36,708][__main__][INFO] - Epoch: 58, Average Train loss: 25.601025530393454
+[2024-05-06 11:04:37,554][__main__][INFO] - best epoch: 58
+[2024-05-06 11:04:38,207][__main__][INFO] - Epoch: 58, Average Val loss: 406.66751928001196
+[2024-05-06 11:04:43,667][__main__][INFO] - Epoch: 59, Average Train loss: 29.643927523191305
+[2024-05-06 11:04:44,502][__main__][INFO] - best epoch: 59
+[2024-05-06 11:04:45,159][__main__][INFO] - Epoch: 59, Average Val loss: 402.565972038801
+[2024-05-06 11:04:50,497][__main__][INFO] - Epoch: 60, Average Train loss: 23.70947487026009
+[2024-05-06 11:04:51,372][__main__][INFO] - Epoch: 60, Average Val loss: 423.46984166770727
+[2024-05-06 11:04:56,642][__main__][INFO] - Epoch: 61, Average Train loss: 23.00435466438088
+[2024-05-06 11:04:57,470][__main__][INFO] - best epoch: 61
+[2024-05-06 11:04:58,161][__main__][INFO] - Epoch: 61, Average Val loss: 350.4606711354807
+[2024-05-06 11:05:03,485][__main__][INFO] - Epoch: 62, Average Train loss: 23.816486546094747
+[2024-05-06 11:05:04,311][__main__][INFO] - Epoch: 62, Average Val loss: 379.33316869407446
+[2024-05-06 11:05:09,508][__main__][INFO] - Epoch: 63, Average Train loss: 23.03054113059792
+[2024-05-06 11:05:10,342][__main__][INFO] - Epoch: 63, Average Val loss: 397.36109227805883
+[2024-05-06 11:05:15,595][__main__][INFO] - Epoch: 64, Average Train loss: 22.218257733877035
+[2024-05-06 11:05:16,422][__main__][INFO] - Epoch: 64, Average Val loss: 438.22237462669165
+[2024-05-06 11:05:21,663][__main__][INFO] - Epoch: 65, Average Train loss: 20.976032563741537
+[2024-05-06 11:05:22,502][__main__][INFO] - Epoch: 65, Average Val loss: 432.9271323171214
+[2024-05-06 11:05:27,722][__main__][INFO] - Epoch: 66, Average Train loss: 19.600632854993673
+[2024-05-06 11:05:28,592][__main__][INFO] - Epoch: 66, Average Val loss: 452.3924796071604

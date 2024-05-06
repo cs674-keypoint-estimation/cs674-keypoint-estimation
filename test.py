@@ -21,7 +21,7 @@ def test_canonical_pose(cfg):
 
     test_dataset = KeypointDataset(cfg, 'test')
     test_dataloader = torch.utils.data.DataLoader(test_dataset, batch_size=1, shuffle=False, num_workers=cfg.num_workers, drop_last=True)
-
+    breakpoint()
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     model = network.sc3k(cfg).to(device)

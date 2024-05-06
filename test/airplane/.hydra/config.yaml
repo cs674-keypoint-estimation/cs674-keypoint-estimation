@@ -4,7 +4,7 @@ split: test
 task: generic
 key_points: 10
 batch_size: 26
-max_epoch: 140
+max_epoch: 200
 num_workers: 6
 class_name: airplane
 overlap_threshold: 0.05

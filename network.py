@@ -286,8 +286,8 @@ class Unsupervised_kpnet(nn.Module):
     def __init__(self, cfg):
         super(Unsupervised_kpnet, self).__init__()
         #self.pointnet_encoder = PointNetfeat()
-        self.ptv3_encoder = PointTransformerV3()
-        self.block1 = residual_block(1024, 512)
+        self.ptv3_encoder = PointTransformerV3_512()
+        #self.block1 = residual_block(1024, 512)
         self.block2 = residual_block(512, 256)
         self.conv23 = torch.nn.Conv1d(256, cfg.key_points, 1)
         self.softmax = nn.Softmax(dim=2)
@@ -301,8 +301,8 @@ class Unsupervised_kpnet(nn.Module):
         ptv3_output = t.feat.view(batch_size, -1, num_points)
         #exit()
         # Down-sampling from 1024 to M key-points
-        x = self.block1(ptv3_output)          # [B x 512 x 2048]
-        x = self.block2(x)          # [B x 256 x 2048]
+        #x = self.block1(ptv3_output)          # [B x 512 x 2048]
+        x = self.block2(ptv3_output)          # [B x 256 x 2048]
         x = self.conv23(x)          # [B x cfg.key_points x 2048]
         x = self.softmax(x)          # [B x cfg.key_points x 2048] => [B x cfg.key_points x 2048{0 to 1}]
         x = torch.bmm(x, pc)        # [Bx cfg.key_points x2048] <-> [Bx2048x3]  =>  [Bx cfg.key_points x3]

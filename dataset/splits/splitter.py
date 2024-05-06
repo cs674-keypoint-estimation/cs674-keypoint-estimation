@@ -1,3 +1,5 @@
+#NOTE: NOT NEEDED, THEY SPLIT THEIR DATA AT THE ROTATION LEVEL
+
 import random
 import os 
 cwd = os.getcwd()
