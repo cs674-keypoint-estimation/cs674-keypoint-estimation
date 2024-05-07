@@ -301,8 +301,8 @@ class Unsupervised_kpnet(nn.Module):
         x = ptv3_out.feat.view(batch_size, -1, num_points)
         #exit()
         # Down-sampling from 1024 to M key-points
-        x = self.block1(x)          # [B x 512 x 2048]
-        x = self.block2(x)          # [B x 256 x 2048]
+        # x = self.block1(x)          # [B x 512 x 2048]
+        # x = self.block2(x)          # [B x 256 x 2048]
         x = self.conv23(x)          # [B x cfg.key_points x 2048]
         x = self.softmax(x)          # [B x cfg.key_points x 2048] => [B x cfg.key_points x 2048{0 to 1}]
         x = torch.bmm(x, pc)        # [Bx cfg.key_points x2048] <-> [Bx2048x3]  =>  [Bx cfg.key_points x3]

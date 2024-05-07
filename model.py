@@ -793,8 +793,8 @@ class PointTransformerV3(PointModule):
         enc_num_head=(2, 4, 8, 16, 32, 64),
         enc_patch_size=(1024, 1024, 1024, 1024, 1024, 1024),
         dec_depths=(2, 2),
-        dec_channels=(128, 128),
-        dec_num_head=(4, 4),
+        dec_channels=(256, 512),
+        dec_num_head=(16, 32),
         dec_patch_size=(1024, 1024),
         mlp_ratio=4,
         qkv_bias=True,
@@ -808,7 +808,7 @@ class PointTransformerV3(PointModule):
         enable_flash=True,
         upcast_attention=False,
         upcast_softmax=False,
-        cls_mode=True,
+        cls_mode=False,
         pdnorm_bn=False,
         pdnorm_ln=False,
         pdnorm_decouple=True,
@@ -914,12 +914,12 @@ class PointTransformerV3(PointModule):
                 self.enc.add(module=enc, name=f"enc{s}")
         
         self.unpool = PointSequential()
-        for s in reversed(range(self.num_stages - 1)):
+        for s in reversed(range(self.num_stages - 3)):
             self.unpool.add(
                 SerializedUnpooling(
-                    in_channels=enc_channels[-1],
+                    in_channels=dec_channels[0],
                     skip_channels=enc_channels[s],
-                    out_channels=enc_channels[-1],
+                    out_channels=dec_channels[0],
                     norm_layer=bn_layer,
                     act_layer=act_layer,
                 ),
@@ -989,7 +989,7 @@ class PointTransformerV3(PointModule):
 
         point = self.embedding(point)
         point = self.enc(point)
-        point = self.unpool(point)
         if not self.cls_mode:
             point = self.dec(point)
+        point = self.unpool(point)
         return point
