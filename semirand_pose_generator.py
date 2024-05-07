@@ -1,16 +1,6 @@
 import numpy as np
 import os
 
-input_folder = 'dataset/pcds/03467517' #Change last section to shape ID
-output_folder ='dataset/poses/03467517' #Change last section to shape ID
-
-def generate_camera_mat():
-    return np.array([
-        [149.84375, 0.0, 68.5],
-        [0.0, 149.84375, 68.5],
-        [0.0, 0.0, 1.0]
-    ])
-
 def generate_pose():
     random_pick = np.random.randint(1,6)
     if random_pick == 1:
@@ -1201,6 +1191,9 @@ def generate_poses(folder_of_pcds):
         #print(poses_list)
     return None     
 
+input_folder = 'dataset/pcds/03467517' #Change last section to shape ID
+output_folder ='dataset/poses/03467517' #Change last section to shape ID
+
 #print(os.listdir('dataset/pcds'))
-generate_poses(input_folder) #How many poses to generate
+generate_poses(input_folder)
 
