@@ -792,10 +792,10 @@ class PointTransformerV3(PointModule):
         enc_channels=(32, 64, 128, 256, 512, 1024),
         enc_num_head=(2, 4, 8, 16, 32, 64),
         enc_patch_size=(1024, 1024, 1024, 1024, 1024, 1024),
-        dec_depths=(2, 2),
-        dec_channels=(256, 512),
-        dec_num_head=(16, 32),
-        dec_patch_size=(1024, 1024),
+        dec_depths=(2, 2, 2, 2, 2),
+        dec_channels=(256, 256, 256, 256, 512),
+        dec_num_head=(2, 4, 8, 16, 32),
+        dec_patch_size=(1024, 1024, 1024, 1024, 1024),
         mlp_ratio=4,
         qkv_bias=True,
         qk_scale=None,
@@ -991,5 +991,5 @@ class PointTransformerV3(PointModule):
         point = self.enc(point)
         if not self.cls_mode:
             point = self.dec(point)
-        point = self.unpool(point)
+        # point = self.unpool(point)
         return point
