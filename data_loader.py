@@ -99,13 +99,13 @@ preprocess = transforms.Compose([
 
 
 class generic_data_loader(torch.utils.data.Dataset):
-    def __init__(self, cfg, split):
+    def __init__(self, cfg, split, max_pcds=100):
         super().__init__()
         self.catg = cfg.class_name
         self.cfg = cfg
         self.cat = []
         self.cat.append(NAMES2ID[cfg.class_name])
-
+        self.max_pcds = max_pcds
         annots = json.load(open(os.path.join(BASEDIR, cfg.data.annot_path)))
         annots = [annot for annot in annots if annot['class_id'] in self.cat]
 
@@ -113,12 +113,12 @@ class generic_data_loader(torch.utils.data.Dataset):
         for i in range(len(annots)):
             if annots[i]['class_id'] not in selected_cat:
                 selected_cat.append(annots[i]['class_id'])
+                
         print('loaded {} samples of categories: '.format(len(annots)), selected_cat)
 
         pcd_paths_np = []
         for i in range(len(selected_cat)):
             pcd_paths_np += glob(os.path.join(BASEDIR, cfg.data.pcd_root, selected_cat[i], '*.pcd'))
-
         self.nclasses = max([max([kp_info['semantic_id'] for kp_info in annot['keypoints']]) for annot in annots]) + 1
         split_models = open(os.path.join(BASEDIR, cfg.data.splits_root, "{}.txt".format(split))).readlines()
         split_models = [m.split('-')[-1].rstrip('\n') for m in split_models]
@@ -129,11 +129,15 @@ class generic_data_loader(torch.utils.data.Dataset):
         pointCloud_lst = []
         pointCloud_lst_2 = []
         print("Loading {} data, please wait\n".format(split))
-        for fn in tqdm(pcd_paths_np):
+        pcd_count = 0
+
+        for fn in (tqdm(pcd_paths_np)):
             model_id = os.path.basename(fn).split('.')[0]
             if model_id not in split_models:
                 continue
-
+            pcd_count +=1
+            if pcd_count>self.max_pcds:
+                break
             cat_name = fn.split('/')[-2]
             mesh_names.append(model_id)
 
@@ -143,10 +147,12 @@ class generic_data_loader(torch.utils.data.Dataset):
             for i in range(24):
                 cam_lst.append(camera_mat['world_mat_{}'.format(i)][:,:3])
                 pc_list.append(transform(naive_read_pcd(fn)[0], camera_mat['world_mat_{}'.format(i)][:,:3]))
+
             camera_param_np.append(cam_lst)
             camera_param_np_2.append(cam_lst[::-1])
             pointCloud_lst.append(pc_list)
             pointCloud_lst_2.append(pc_list[::-1])
+
 
         print("\n\nPlease wait, arranging the data\n\n")
         self.camera_param_np = list(itertools.chain.from_iterable(camera_param_np))     # combine array elements in
@@ -161,6 +167,7 @@ class generic_data_loader(torch.utils.data.Dataset):
         print("  * transformed_pcds 1: {}".format(len(self.transformed_pcds)))
         print("  * transformed_pcds 2: {}".format(len(self.transformed_pcds_2)))
         print("  * mesh_names: {}\n\n".format(len(self.mesh_names)))
+
 
     def __getitem__(self, idx):
         pcd1 = self.transformed_pcds[idx]

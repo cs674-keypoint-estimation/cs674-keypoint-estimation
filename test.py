@@ -21,7 +21,7 @@ def test_canonical_pose(cfg):
 
     test_dataset = KeypointDataset(cfg, 'test')
     test_dataloader = torch.utils.data.DataLoader(test_dataset, batch_size=1, shuffle=False, num_workers=cfg.num_workers, drop_last=True)
-    breakpoint()
+
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     model = network.sc3k(cfg).to(device)
@@ -47,6 +47,8 @@ def test_canonical_pose(cfg):
                     not_repeat.append(batch_pcd[1][0])
                     visualizer.save_kp_and_pc_in_pcd(batch_pcd[0][0], batch_pred[0].cpu().numpy(), '{}_visualizations'.format(cfg.task), save=True,name="{}_".format(batch_id) + batch_pcd[1][0])
 
+
+
     DAS_unsup = function_bank.DAS_unsupervised(keypoints)
 
     logger.info('Avg. coverage_useek: {:.2f}'.format(np.mean(coverage_)))
@@ -58,7 +60,8 @@ def test_generic_pose(cfg):
 
     KeypointDataset = getattr(dataset, '{}_data_loader'.format(cfg.task))
 
-    test_dataset = KeypointDataset(cfg, 'test')
+    test_dataset = KeypointDataset(cfg, 'test', max_pcds = 20)
+
     test_dataloader = torch.utils.data.DataLoader(test_dataset, batch_size=1, shuffle=False,
                                                   num_workers=cfg.num_workers, drop_last=True)
 

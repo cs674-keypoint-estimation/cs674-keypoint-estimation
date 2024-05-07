@@ -7,8 +7,9 @@ import einops
 from torch.autograd import Variable
 from model import PointTransformerV3
 from model import PointTransformerV3_512
-
-
+from model import PointTransformerV3_256
+from model import PointTransformerV3_128
+import network_alt
 def vector_gather(vectors, indices):
     """
     Gathers (batched) vectors according to indices.
@@ -285,20 +286,21 @@ class Unsupervised_kpnet(nn.Module):
     """
     def __init__(self, cfg):
         super(Unsupervised_kpnet, self).__init__()
-        #self.pointnet_encoder = PointNetfeat()
-        self.ptv3_encoder = PointTransformerV3_512()
+        self.pointnet_encoder = PointNetfeat()
+        self.ptv3_encoder = PointTransformerV3_512(order ='hilbert-trans')
         #self.block1 = residual_block(1024, 512)
         self.block2 = residual_block(512, 256)
         self.conv23 = torch.nn.Conv1d(256, cfg.key_points, 1)
         self.softmax = nn.Softmax(dim=2)
-        self.gridsize = 0.03
+        self.gridsize = 0.04
     def forward(self, pc):
-        #x = self.pointnet_encoder(pc.permute(0, 2, 1))   # [B x 1024 x 2048]
+        x = self.pointnet_encoder(pc.permute(0, 2, 1))   # [B x 1024 x 2048]
         ptv3_dict = create_ptv3_dict(pc, pc, self.gridsize)
         t = self.ptv3_encoder(ptv3_dict)
         batch_size = pc.size(0)
         num_points = pc.size(1)
         ptv3_output = t.feat.view(batch_size, -1, num_points)
+
         #exit()
         # Down-sampling from 1024 to M key-points
         #x = self.block1(ptv3_output)          # [B x 512 x 2048]
@@ -317,8 +319,10 @@ class sc3k(nn.Module):
     '''
     def __init__(self, cfg):
         super(sc3k, self).__init__()
-        self.estimate_kp = Unsupervised_kpnet(cfg)
-        # self.estimate_kp = Unsupervised_kpnet_without_Residual_block(cfg)
+        if cfg.alt_scripts == True:
+            self.estimate_kp = network_alt.Unsupervised_PointNetToKeypointsAlt(cfg)
+        else:
+            self.estimate_kp = Unsupervised_kpnet(cfg)
         self.task = cfg.task
         self.split = cfg.split
 

@@ -40,15 +40,6 @@ weight_pose = 0.05
 '''
 
 #weights configured according to sc3k paper with exception of centroid which is a new loss added by us
-'''
-weight_separation = 0.5
-weight_centroid = 2
-weight_shape = 6
-weight_volume = 1
-weight_consistency = 1
-weight_overlap = 0.5
-weight_pose = 0.05
-'''
 weight_separation = 1.5
 weight_centroid = 1
 weight_shape = 7
@@ -58,7 +49,7 @@ weight_equidistance = 0.01
 weight_overlap = 0.5
 weight_pose = 0.05
 
-def compute_loss_pr(kp1, kp2, data, writer, step, cfg, split='split??'):
+def compute_loss_alt(kp1, kp2, data, writer, step, cfg, split='split??'):
     #device calls heavily modeled after sc3k code to avoid cuda errors
     device = kp1.device
     loss_centroid1 = centroid_loss(kp1, data[0].float().to(device))
