@@ -9,7 +9,7 @@ num_workers: 6
 class_name: airplane
 overlap_threshold: 0.05 # 0.05
 
-save_results: True
+save_results: False
 
 
 parameters:
