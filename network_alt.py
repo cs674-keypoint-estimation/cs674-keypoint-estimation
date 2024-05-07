@@ -15,9 +15,9 @@ import hydra
 # 3.  Additionally, dropout is applied to both paths to encourage learning
 
 
-class Unsupervised_PointNetToKeypointsNew(torch.nn.Module):
+class Unsupervised_PointNetToKeypointsAlt(torch.nn.Module):
     def __init__(self, cfg):
-        super(Unsupervised_PointNetToKeypointsNew, self).__init__()     
+        super(Unsupervised_PointNetToKeypointsAlt, self).__init__()     
         self.conv_to_concat = torch.nn.Conv1d(1024, 128, 1)
         self.resblock1 = network.residual_block(1024, 512)
         self.resblock2 = network.residual_block(512,256)
