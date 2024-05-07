@@ -2,7 +2,7 @@ import numpy as np
 import os
 
 input_folder = 'dataset/pcds/03467517' #Change last section to shape ID
-output_folder ='03467517' #Change last section to shape ID
+output_folder ='dataset/poses/03467517' #Change last section to shape ID
 
 def generate_camera_mat():
     return np.array([
