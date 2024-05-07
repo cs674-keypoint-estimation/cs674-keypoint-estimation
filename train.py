@@ -73,7 +73,7 @@ def train(cfg):
         for i, data in enumerate(val_iter):
             with torch.no_grad():
                 kp1, kp2 = model(data)
-                loss = loss_fn(kp1, kp2, data, writer, train_step, cfg, split='val')
+                loss = loss_fn(kp1, kp2, data, writer, val_step, cfg, split='val')
 
                 writer.add_scalar('val_loss/overall', loss, val_step)  # write validation loss
                 val_step += 1  # increment in val_step
