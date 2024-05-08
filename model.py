@@ -914,12 +914,12 @@ class PointTransformerV3(PointModule):
                 self.enc.add(module=enc, name=f"enc{s}")
         
         self.unpool = PointSequential()
-        for s in reversed(range(self.num_stages - 3)):
+        for s in reversed(range(self.num_stages - 1)):
             self.unpool.add(
                 SerializedUnpooling(
-                    in_channels=dec_channels[0],
+                    in_channels=enc_channels[-1],
                     skip_channels=enc_channels[s],
-                    out_channels=dec_channels[0],
+                    out_channels=enc_channels[-1],
                     norm_layer=bn_layer,
                     act_layer=act_layer,
                 ),
