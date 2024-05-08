@@ -1,7 +1,7 @@
 Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated, Noisy, and Decimated Point Cloud Data (ICCV-2023)
 
 split: test
-task: generic
+task: canonical
 key_points: 10
 batch_size: 1
 max_epoch: 20
