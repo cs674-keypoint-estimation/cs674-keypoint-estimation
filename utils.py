@@ -13,31 +13,24 @@ import open3d as o3d
 import seaborn as sns
 
 
-def compute_loss(kp1, kp2, data, writer, step, cfg, split='split??'):
+def compute_loss(kp1, data, writer, step, cfg, split='split??'):
     device = kp1.device
     l_sep1 = cfg.parameters.separation * separation_loss(kp1)
-    l_sep2 = cfg.parameters.separation * separation_loss(kp2)
     l_overlap1 = cfg.parameters.overlap * overlap_loss(kp1, cfg.overlap_threshold)
-    l_overlap2 = cfg.parameters.overlap * overlap_loss(kp2,  cfg.overlap_threshold)
     l_shape1 = cfg.parameters.shape * shape_loss(kp1, data[0].float().to(device))
-    l_shape2 = cfg.parameters.shape * shape_loss(kp2, data[2].float().to(device))
-    l_consist = cfg.parameters.consist * consistancy_loss(kp1, kp2, data[1].float().to(device), data[3].float().to(device))
     l_volume1 = cfg.parameters.volume * volume_loss(kp1, data[0].float().to(device))
-    l_volume2 = cfg.parameters.volume * volume_loss(kp2, data[2].float().to(device))
-    l_pose = cfg.parameters.pose *pose_loss(kp1, kp2, data[1].float().to(device), data[3].float().to(device))
 
-    writer.add_scalar('{}_loss/consist'.format(split), l_consist, step)
-    writer.add_scalar('{}_loss/relative_pose'.format(split), l_pose, step)
+
     writer.add_scalar('{}_loss/sep1'.format(split), l_sep1, step)
-    writer.add_scalar('{}_loss/sep2'.format(split), l_sep2, step)
-    writer.add_scalar('{}_loss/overlap1'.format(split), l_overlap1, step)
-    writer.add_scalar('{}_loss/overlap2'.format(split), l_overlap2, step)
-    writer.add_scalar('{}_loss/shape1'.format(split), l_shape1, step)
-    writer.add_scalar('{}_loss/shape2'.format(split), l_shape2, step)
-    writer.add_scalar('{}_loss/volume1'.format(split), l_volume1, step)
-    writer.add_scalar('{}_loss/volume2'.format(split), l_volume2, step)
 
-    return l_sep1 + l_sep2 + l_overlap1 + l_overlap2 + l_shape1 + l_shape2 + l_consist + l_volume1 + l_volume2 + l_pose #+ l_reconstruction
+    writer.add_scalar('{}_loss/overlap1'.format(split), l_overlap1, step)
+
+    writer.add_scalar('{}_loss/shape1'.format(split), l_shape1, step)
+
+    writer.add_scalar('{}_loss/volume1'.format(split), l_volume1, step)
+
+
+    return l_sep1 + l_overlap1 + l_shape1   + l_volume1   #+ l_reconstruction
 
 
 def consistancy_loss(kp1, kp2, rot1, rot2):

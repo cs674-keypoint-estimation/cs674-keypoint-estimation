@@ -19,11 +19,11 @@ def train(cfg):
 
     KeypointDataset = getattr(dataset, 'generic_data_loader')
 
-    train_dataset = KeypointDataset(cfg, 'train', max_pcds = 100)
+    train_dataset = KeypointDataset(cfg, 'train')
     train_dataloader = torch.utils.data.DataLoader(train_dataset, batch_size=cfg.batch_size, shuffle=True,
                                                    num_workers=cfg.num_workers, drop_last=False)
 
-    val_dataset = KeypointDataset(cfg, 'val', max_pcds=20)
+    val_dataset = KeypointDataset(cfg, 'val')
     val_dataloader = torch.utils.data.DataLoader(val_dataset, batch_size=cfg.batch_size, shuffle=True,
                                                  num_workers=cfg.num_workers, drop_last=False)
 
@@ -48,8 +48,8 @@ def train(cfg):
         model.train()
         for i, data in enumerate(train_iter):
 
-            kp1, kp2 = model(data)
-            loss = loss_fn(kp1, kp2, data, writer, train_step, cfg, split='train')
+            kp1 = model(data)
+            loss = loss_fn(kp1, data, writer, train_step, cfg, split='train')
            
             optimizer.zero_grad()
             loss.backward()
@@ -72,8 +72,8 @@ def train(cfg):
         val_iter = tqdm(val_dataloader)
         for i, data in enumerate(val_iter):
             with torch.no_grad():
-                kp1, kp2 = model(data)
-                loss = loss_fn(kp1, kp2, data, writer, val_step, cfg, split='val')
+                kp1 = model(data)
+                loss = loss_fn(kp1, data, writer, val_step, cfg, split='val')
 
                 writer.add_scalar('val_loss/overall', loss, val_step)  # write validation loss
                 val_step += 1  # increment in val_step

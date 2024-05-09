@@ -99,13 +99,13 @@ preprocess = transforms.Compose([
 
 
 class generic_data_loader(torch.utils.data.Dataset):
-    def __init__(self, cfg, split, max_pcds=100):
+    def __init__(self, cfg, split, max_pcds=1000):
         super().__init__()
         self.catg = cfg.class_name
         self.cfg = cfg
         self.cat = []
         self.cat.append(NAMES2ID[cfg.class_name])
-        self.max_pcds = max_pcds
+        self.max_pcds = max_pcds        
         annots = json.load(open(os.path.join(BASEDIR, cfg.data.annot_path)))
         annots = [annot for annot in annots if annot['class_id'] in self.cat]
 
@@ -124,10 +124,7 @@ class generic_data_loader(torch.utils.data.Dataset):
         split_models = [m.split('-')[-1].rstrip('\n') for m in split_models]
 
         mesh_names = []
-        camera_param_np = []
-        camera_param_np_2 = []
         pointCloud_lst = []
-        pointCloud_lst_2 = []
         print("Loading {} data, please wait\n".format(split))
         pcd_count = 0
 
@@ -136,59 +133,48 @@ class generic_data_loader(torch.utils.data.Dataset):
             if model_id not in split_models:
                 continue
             pcd_count +=1
+
             if pcd_count>self.max_pcds:
-                break
+                break            
             cat_name = fn.split('/')[-2]
             mesh_names.append(model_id)
 
             pc_list = []
-            cam_lst = []
-            camera_mat = np.load(os.path.join(BASEDIR, cfg.data.poses_root, cat_name, '{}.npz'.format(model_id)))
-            for i in range(24):
-                cam_lst.append(camera_mat['world_mat_{}'.format(i)][:,:3])
-                pc_list.append(transform(naive_read_pcd(fn)[0], camera_mat['world_mat_{}'.format(i)][:,:3]))
 
-            camera_param_np.append(cam_lst)
-            camera_param_np_2.append(cam_lst[::-1])
+
+            for i in range(24):
+
+                pc_list.append(naive_read_pcd(fn)[0])
+
             pointCloud_lst.append(pc_list)
-            pointCloud_lst_2.append(pc_list[::-1])
 
 
         print("\n\nPlease wait, arranging the data\n\n")
-        self.camera_param_np = list(itertools.chain.from_iterable(camera_param_np))     # combine array elements in
-        self.camera_param_np_2 = list(itertools.chain.from_iterable(camera_param_np_2))  # combine array elements in
+
         self.transformed_pcds = list(itertools.chain.from_iterable(pointCloud_lst))  # combine array elements in
-        self.transformed_pcds_2 = list(itertools.chain.from_iterable(pointCloud_lst_2))  # combine array elements in
         self.mesh_names = list(np.repeat(mesh_names, 24))     # repeat list
 
         print("\n\nloaded data contains: ")
-        print("  * camera_param 1: {}".format(len(self.camera_param_np)))
-        print("  * camera_param 2: {}".format(len(self.camera_param_np_2)))
-        print("  * transformed_pcds 1: {}".format(len(self.transformed_pcds)))
-        print("  * transformed_pcds 2: {}".format(len(self.transformed_pcds_2)))
+
+        print("  * pcds 1: {}".format(len(self.transformed_pcds)))
         print("  * mesh_names: {}\n\n".format(len(self.mesh_names)))
 
 
     def __getitem__(self, idx):
         pcd1 = self.transformed_pcds[idx]
-        pcd2 = self.transformed_pcds_2[idx]
-        camera_matrix = self.camera_param_np[idx]
-        camera_matrix2 = self.camera_param_np_2[idx]
         mesh_name = self.mesh_names[idx]
 
         if self.cfg.augmentation.normalize_pc:
             pcd1 = normalize_pc(pcd1)
-            pcd2 = normalize_pc(pcd2)
 
         if self.cfg.augmentation.down_sample:
             pcd1 = farthest_point_sample(pcd1, self.cfg.sample_points)
 
         if self.cfg.augmentation.gaussian_noise:
             pcd1 = add_noise(pcd1, sigma=self.cfg.lamda)
-            pcd2 = add_noise(pcd2, sigma=self.cfg.lamda2)
 
 
-        return pcd1.astype(np.float32), camera_matrix, pcd2.astype(np.float32), camera_matrix2, mesh_name,
+        return pcd1.astype(np.float32), mesh_name,
 
     def __len__(self):
         return len(self.mesh_names)

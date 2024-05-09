@@ -330,8 +330,7 @@ class sc3k(nn.Module):
         device = next(self.parameters()).device 
         if self.split == 'train' or self.task == 'generic':
             kp1 = self.estimate_kp(data[0].float().to(device)) # cuda())
-            kp2 = self.estimate_kp(data[2].float().to(device)) # cuda())
-            return kp1, kp2
+            return kp1
 
         elif self.task == 'canonical':
             kp1 = self.estimate_kp(data[0].float().to(device)) # cuda())
@@ -346,7 +345,7 @@ def main(cfg):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model = sc3k(cfg).to(device) # cuda()   # unsupervised network
     # pdb.set_trace()
-    kp1, kp2 = model(data)
+    kp1 = model(data)
     print(kp1.shape, kp1.shape)
 
 

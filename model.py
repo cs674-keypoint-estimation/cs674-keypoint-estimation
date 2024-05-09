@@ -22,7 +22,7 @@ try:
     import flash_attn.flash_attn_interface    
 except ImportError:
     flash_attn = None
-
+    breakpoint()
 from serialization import encode
 
 
@@ -353,7 +353,7 @@ class SerializedAttention(PointModule):
             assert (
                 upcast_softmax is False
             ), "Set upcast_softmax to False when enable Flash Attention"
-            assert flash_attn is not None, "Make sure flash_attn is installed."
+            #assert flash_attn is not None, "Make sure flash_attn is installed."
             self.patch_size = patch_size
             self.attn_drop = attn_drop
         else:
@@ -806,15 +806,15 @@ class PointTransformerV3(PointModule):
         mlp_ratio=4,
         qkv_bias=True,
         qk_scale=None,
-        attn_drop=0.0,
-        proj_drop=0.0,
+        attn_drop=0.4,
+        proj_drop=0.2,
         drop_path=0.3,
         pre_norm=True,
         shuffle_orders=True,
-        enable_rpe=False,
-        enable_flash=True,
-        upcast_attention=False,
-        upcast_softmax=False,
+        enable_rpe=True,
+        enable_flash=False,
+        upcast_attention=True,
+        upcast_softmax=True,
         cls_mode=True,
         pdnorm_bn=False,
         pdnorm_ln=False,

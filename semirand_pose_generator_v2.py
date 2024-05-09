@@ -738,8 +738,8 @@ def generate_poses(folder_of_pcds, rotations):
         #print(poses_list)
     return None 
 
-input_folder = 'dataset/pcds/03001627' #Change last section to shape ID
-output_folder ='dataset/poses/03001627' #Change last section to shape ID
+input_folder = 'dataset/pcds/03467517' #Change last section to shape ID
+output_folder ='dataset/poses/03467517' #Change last section to shape ID
 
 #print(os.listdir('dataset/pcds'))
 generate_poses(input_folder,24)
