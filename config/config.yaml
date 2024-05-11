@@ -37,9 +37,9 @@ sample_points:  2048
 
 data:
   annot_path: dataset/annotations/all.json
-  pcd_root: dataset/02958343/pcds
-  splits_root: dataset/02958343/splits
-  poses_root: dataset/02958343/poses
+  pcd_root: dataset/pcds/02958343
+  splits_root: dataset/splits/02958343
+  poses_root: dataset/poses/02958343
 #  best_model_path: 'please set the path'
   best_model_path : train/mug/Best_mug_10kp.pth
 
