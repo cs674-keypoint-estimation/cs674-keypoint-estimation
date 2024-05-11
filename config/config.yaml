@@ -6,7 +6,7 @@ key_points: 10
 batch_size: 12
 max_epoch: 50
 num_workers: 24
-class_name: car
+class_name: mug
 overlap_threshold: 0.05 # 0.05
 
 save_results: True
@@ -38,10 +38,10 @@ sample_points:  2048
 data:
   annot_path: dataset/annotations/all.json
   pcd_root: dataset/pcds
-  splits_root: dataset/splits/02958343
+  splits_root: dataset/splits/03797390
   poses_root: dataset/poses
 #  best_model_path: 'please set the path'
-  best_model_path : train/car/Best_car_10kp_dec.pth
+  best_model_path : train/mug/Best_mug_10kp_dec.pth
 
 hydra:
   run:
