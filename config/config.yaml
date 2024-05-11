@@ -37,11 +37,11 @@ sample_points:  2048
 
 data:
   annot_path: dataset/annotations/all.json
-  pcd_root: dataset/pcds
-  splits_root: dataset/splits
-  poses_root: dataset/poses
+  pcd_root: dataset/02958343/pcds
+  splits_root: dataset/02958343/splits
+  poses_root: dataset/02958343/poses
 #  best_model_path: 'please set the path'
-  best_model_path : train/airplane/Best_mug_10kp.pth
+  best_model_path : train/mug/Best_mug_10kp.pth
 
 hydra:
   run:
