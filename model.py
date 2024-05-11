@@ -804,11 +804,11 @@ class PointTransformerV3(PointModule):
         drop_path=0.3,
         pre_norm=True,
         shuffle_orders=True,
-        enable_rpe=True,
-        enable_flash=False,
-        upcast_attention=True,
-        upcast_softmax=True,
-        cls_mode=True,
+        enable_rpe=False,
+        enable_flash=True,
+        upcast_attention=False,
+        upcast_softmax=False,
+        cls_mode=False,
         pdnorm_bn=False,
         pdnorm_ln=False,
         pdnorm_decouple=True,
@@ -991,5 +991,5 @@ class PointTransformerV3(PointModule):
         point = self.enc(point)
         if not self.cls_mode:
             point = self.dec(point)
-        point = self.unpool(point)
+        # point = self.unpool(point)
         return point

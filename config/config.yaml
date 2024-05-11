@@ -9,7 +9,7 @@ num_workers: 24
 class_name: car
 overlap_threshold: 0.05 # 0.05
 
-save_results: False
+save_results: True
 
 
 parameters:
@@ -41,7 +41,7 @@ data:
   splits_root: dataset/splits/02958343
   poses_root: dataset/poses
 #  best_model_path: 'please set the path'
-  best_model_path : train/mug/Best_car_10kp.pth
+  best_model_path : train/car/Best_car_10kp_dec.pth
 
 hydra:
   run:
