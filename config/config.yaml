@@ -1,15 +1,15 @@
 Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated, Noisy, and Decimated Point Cloud Data (ICCV-2023)
 
 split: train
-task: canonical
+task: generic
 key_points: 10
-batch_size: 26
-max_epoch: 20
-num_workers: 6
-class_name: airplane
+batch_size: 12
+max_epoch: 200
+num_workers: 24
+class_name: mug
 overlap_threshold: 0.05 # 0.05
 
-save_results: True
+save_results: False
 
 
 parameters:
@@ -36,12 +36,12 @@ sample_points:  2048
 
 
 data:
-  annot_path: dataset/annotations/airplane.json
+  annot_path: dataset/annotations/all.json
   pcd_root: dataset/pcds
   splits_root: dataset/splits
   poses_root: dataset/poses
 #  best_model_path: 'please set the path'
-  best_model_path : train/airplane/Best_airplane_10kp.pth
+  best_model_path : train/airplane/Best_mug_10kp.pth
 
 hydra:
   run:
