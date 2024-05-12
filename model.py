@@ -991,5 +991,5 @@ class PointTransformerV3(PointModule):
         point = self.enc(point)
         if not self.cls_mode:
             point = self.dec(point)
-        # point = self.unpool(point)
+        point = self.unpool(point)
         return point
