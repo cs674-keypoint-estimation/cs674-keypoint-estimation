@@ -59,11 +59,12 @@ def train(cfg):
             meter.update(loss.item())
             writer.add_scalar('train_loss/overall', loss, train_step)  # write training loss
             train_step += 1  # increment in train_step
-
+            
+        if epoch % 5 == 0:
             torch.save(model.state_dict(), '{}_{}kp_{}.pth'.format(cfg.class_name, cfg.key_points, epoch))
             #delete the previous model
             if epoch > 0 and epoch != cfg.max_epoch:
-                os.remove('{}_{}kp_{}.pth'.format(cfg.class_name, cfg.key_points, epoch-1))
+                os.remove('{}_{}kp_{}.pth'.format(cfg.class_name, cfg.key_points, epoch-5))
 
         train_loss = meter.avg
         logger.info(f'Epoch: {epoch}, Average Train loss: {meter.avg}')
