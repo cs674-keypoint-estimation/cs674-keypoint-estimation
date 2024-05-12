@@ -3,7 +3,7 @@ Paper: SC3K -- Self-supervised and Coherent 3D Keypoints Estimation from Rotated
 split: train
 task: generic
 key_points: 10
-batch_size: 12
+batch_size: 26
 max_epoch: 50
 num_workers: 24
 class_name: mug
