@@ -5,6 +5,7 @@ task: generic
 key_points: 10
 batch_size: 12
 max_epoch: 50
+resume_epoch: 0
 num_workers: 24
 class_name: table
 overlap_threshold: 0.05 # 0.05
