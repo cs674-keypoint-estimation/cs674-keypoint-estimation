@@ -36,25 +36,25 @@ class residual_block_instance_norm(nn.Module):
 
 #GROUP NORM:
 
-class residual_block_group_norm(nn.Module):
+class residual_block_layer_norm(nn.Module):
     def __init__(self, in_, out_):
-        super(residual_block_group_norm, self).__init__()
+        super(residual_block_layer_norm, self).__init__()
         self.conv1 = nn.Conv1d(in_channels=in_, out_channels=in_,kernel_size=1)
-        self.group_norm1 = nn.GroupNorm(num_channels=10, num_features=in_)
+        self.layer_norm1 = nn.LayerNorm([10,10,10])
         self.relu1 = nn.ReLU()
         self.conv2 = nn.Conv1d(in_channels=in_, out_channels=out_,kernel_size=1)
-        self.group_norm2 = nn.GroupNorm(num_channels=10, num_features=out_)
+        self.layer_norm2 = nn.LayerNorm([10,10,10])
 
     def forward(self, input):
         x1 = self.conv1(input)
-        x1 = self.group_norm1(x1)
+        x1 = self.layer_norm1(x1)
         x1 = self.relu1(x1)
 
         x2 = self.conv2(input)
-        x2 = self.group_norm2(x2)
+        x2 = self.layer_norm2(x2)
 
         x3 = self.conv2(x1)
-        x3 = self.group_norm2(x3)
+        x3 = self.layer_norm2(x3)
 
         x3 += x2
 
@@ -63,6 +63,7 @@ class residual_block_group_norm(nn.Module):
 
         return x
 
+"""
 #LAYER NORM:
 
 class residual_block_layer_norm(nn.Module):
@@ -91,3 +92,4 @@ class residual_block_layer_norm(nn.Module):
 
 
         return x
+"""
