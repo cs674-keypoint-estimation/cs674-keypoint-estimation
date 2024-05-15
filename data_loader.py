@@ -99,7 +99,7 @@ preprocess = transforms.Compose([
 
 
 class generic_data_loader(torch.utils.data.Dataset):
-    def __init__(self, cfg, split, max_pcds=100):
+    def __init__(self, cfg, split, max_pcds=999):
         super().__init__()
         self.catg = cfg.class_name
         self.cfg = cfg
