@@ -49,6 +49,7 @@ mode:
 # decoder is either 'ptv3' or 'sc3k'
     decoder: sc3k
     flash_attention: False
+    alt_scripts: False
 
 hydra:
   run:
