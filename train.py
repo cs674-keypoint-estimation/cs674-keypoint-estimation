@@ -36,7 +36,7 @@ def train(cfg):
     best_loss = 1e10
     train_step = 0
     val_step = 0
-    if cfg.alt_scripts == True:
+    if cfg.mode.alt_scripts == True:
         loss_fn = utils_alt.compute_loss_alt
     else:
         loss_fn=function_bank.compute_loss
