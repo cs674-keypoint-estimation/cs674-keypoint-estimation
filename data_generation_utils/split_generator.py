@@ -8,7 +8,7 @@ import random
 
 def generate_splits(folder_of_pcds, class_id):
 
-    output_folder = f'dataset/splits/{class_id}' #Change last section to shape ID
+    output_folder = f'../dataset/splits/{class_id}' #Change last section to shape ID
 
     if not os.path.exists(output_folder):
         os.mkdir(output_folder)

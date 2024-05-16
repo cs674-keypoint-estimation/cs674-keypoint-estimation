@@ -715,7 +715,7 @@ def generate_world_mat(index, random_pick):
     
 
 def generate_poses(folder_of_pcds, rotations, class_id):
-    output_folder = f'dataset/poses/{class_id}' #Change last section to shape ID
+    output_folder = f'../dataset/poses/{class_id}' #Change last section to shape ID
 
     if not os.path.exists(output_folder):
         os.mkdir(output_folder)
