@@ -7,7 +7,7 @@
   - Run `sh setup.sh` to setup a Conda environment with all required dependencies installed.
 **NOTE**: We assume you have CUDA running on your machine. Please change the CUDA version dependent libraries in **setup.sh** as needed. By default, it assumes you have CUDA 12.1.
   - Alternatively,
-    - Follow instructions in readme.md for SC3K-dependency installation
+    - Follow instructions in **SC3K_README.md** for SC3K-dependency installation
     - Install additional libraries as needed.
 - In case you do not plan to use flash-attention, simply skip installing it. Disable usage by setting mode.`flash_attention : False` in **config.yaml**.
 - Inside config.yaml:
