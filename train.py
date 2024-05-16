@@ -19,11 +19,11 @@ def train(cfg):
 
     KeypointDataset = getattr(dataset, 'generic_data_loader')
 
-    train_dataset = KeypointDataset(cfg, 'train', max_pcds = 100)
+    train_dataset = KeypointDataset(cfg, 'train')
     train_dataloader = torch.utils.data.DataLoader(train_dataset, batch_size=cfg.batch_size, shuffle=True,
                                                    num_workers=cfg.num_workers, drop_last=False)
 
-    val_dataset = KeypointDataset(cfg, 'val', max_pcds=20)
+    val_dataset = KeypointDataset(cfg, 'val')
     val_dataloader = torch.utils.data.DataLoader(val_dataset, batch_size=cfg.batch_size, shuffle=True,
                                                  num_workers=cfg.num_workers, drop_last=False)
 
