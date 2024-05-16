@@ -289,9 +289,15 @@ class Unsupervised_kpnet(nn.Module):
             self.encoder = PointNetfeat()
         else:
             if cfg.mode.decoder == 'ptv3':
-                self.encoder = PointTransformerV3(cls_mode=False, enable_flash=cfg.mode.flash_attention)
+                if cfg.mode.flash_attention:
+                    self.encoder = PointTransformerV3(cls_mode=False, enable_flash=True, upcast_softmax=False, upcast_attention=False, enable_rpe=False)
+                else:
+                    self.encoder = PointTransformerV3(cls_mode=False, enable_flash=False, upcast_softmax=True, upcast_attention=True, enable_rpe=True)
             else:
-                self.encoder = PointTransformerV3(enable_flash=cfg.mode.flash_attention)
+                if cfg.mode.flash_attention:
+                    self.encoder = PointTransformerV3(enable_flash=True, upcast_softmax=False, upcast_attention=False, enable_rpe=False)
+                else:
+                    self.encoder = PointTransformerV3(enable_flash=False, upcast_softmax=True, upcast_attention=True, enable_rpe=True)
         self.block1 = residual_block(1024, 512)
         self.block2 = residual_block(512, 256)
         self.conv23 = torch.nn.Conv1d(256, cfg.key_points, 1)

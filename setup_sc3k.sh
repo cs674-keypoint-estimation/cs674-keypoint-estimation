@@ -57,7 +57,10 @@ conda install seaborn --yes
 conda install scikit-learn --yes
 conda install scipy --yes
 conda install fastai::timm --yes
+conda install conda-forge::addict --yes
 
+
+#These are for PTv3. Please modify based on your CUDA version
 pip install spconv-cu120
 pip install torch-scatter -f https://data.pyg.org/whl/torch-2.2.0+cu121.html
 pip install flash-attn --no-build-isolation
