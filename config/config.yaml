@@ -5,7 +5,6 @@ task: generic
 key_points: 10
 batch_size: 12
 max_epoch: 50
-resume_epoch: 35
 num_workers: 24
 class_name: mug
 overlap_threshold: 0.05 # 0.05
@@ -43,6 +42,13 @@ data:
   poses_root: dataset/poses
 #  best_model_path: 'please set the path'
   best_model_path : train/table/Best_mug_10kp_dec.pth
+
+mode:
+# encoder is either 'ptv3' or 'pointnet'
+    encoder: ptv3
+# decoder is either 'ptv3' or 'sc3k'
+    decoder: sc3k
+    flash_attention: False
 
 hydra:
   run:

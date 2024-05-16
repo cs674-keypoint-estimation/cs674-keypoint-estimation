@@ -27,14 +27,6 @@ def train(cfg):
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model = network.sc3k(cfg).to(device) # cuda()   # unsupervised network
-
-    saved_model_path = '{}_{}kp_{}.pth'.format(cfg.class_name, cfg.key_points, cfg.resume_epoch)
-    if os.path.isfile(saved_model_path):
-        model.load_state_dict(torch.load(saved_model_path))
-        print("Loaded model state from '{}'".format(saved_model_path))
-    else:
-        print("No saved model state found at '{}'. Training from scratch.".format(saved_model_path))
-
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
 
     meter = AverageMeter()
@@ -59,12 +51,6 @@ def train(cfg):
             meter.update(loss.item())
             writer.add_scalar('train_loss/overall', loss, train_step)  # write training loss
             train_step += 1  # increment in train_step
-            
-        if epoch % 5 == 0:
-            torch.save(model.state_dict(), '{}_{}kp_{}.pth'.format(cfg.class_name, cfg.key_points, epoch))
-            #delete the previous model
-            if epoch > 0 and epoch != cfg.max_epoch:
-                os.remove('{}_{}kp_{}.pth'.format(cfg.class_name, cfg.key_points, epoch-5))
 
         train_loss = meter.avg
         logger.info(f'Epoch: {epoch}, Average Train loss: {meter.avg}')

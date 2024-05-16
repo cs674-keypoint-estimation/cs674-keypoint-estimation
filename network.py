@@ -5,7 +5,7 @@ import hydra
 import numpy as np
 import einops
 from torch.autograd import Variable
-from model import PointTransformerV3
+from PTv3_model import PointTransformerV3
 
 
 
@@ -285,24 +285,35 @@ class Unsupervised_kpnet(nn.Module):
     """
     def __init__(self, cfg):
         super(Unsupervised_kpnet, self).__init__()
-        # self.pointnet_encoder = PointNetfeat()
-        self.ptv3_encoder = PointTransformerV3()
+        if cfg.mode.encoder == 'pointnet':
+            self.encoder = PointNetfeat()
+        else:
+            if cfg.mode.decoder == 'ptv3':
+                self.encoder = PointTransformerV3(cls_mode=False, enable_flash=cfg.mode.flash_attention)
+            else:
+                self.encoder = PointTransformerV3(enable_flash=cfg.mode.flash_attention)
         self.block1 = residual_block(1024, 512)
         self.block2 = residual_block(512, 256)
         self.conv23 = torch.nn.Conv1d(256, cfg.key_points, 1)
         self.softmax = nn.Softmax(dim=2)
 
     def forward(self, pc):
-        # x = self.pointnet_encoder(pc.permute(0, 2, 1))   # [B x 1024 x 2048]
-        ptv3_dict = create_ptv3_dict(pc, pc, 0.05)
-        ptv3_out = self.ptv3_encoder(ptv3_dict)
-        batch_size = pc.size(0)
-        num_points = pc.size(1)
-        x = ptv3_out.feat.view(batch_size, -1, num_points)
-        #exit()
-        # Down-sampling from 1024 to M key-points
-        # x = self.block1(x)          # [B x 512 x 2048]
-        # x = self.block2(x)          # [B x 256 x 2048]
+        # Check if the encoder is pointnet or ptv3
+        if isinstance(self.encoder, PointNetfeat):
+            x = self.pointnet_encoder(pc.permute(0, 2, 1))   # [B x 1024 x 2048]
+        else:
+            ptv3_dict = create_ptv3_dict(pc, pc, 0.05)
+            ptv3_out = self.encoder(ptv3_dict)
+            batch_size = pc.size(0)
+            num_points = pc.size(1)
+            x = ptv3_out.feat.view(batch_size, -1, num_points)
+
+        # Check if cls_mode is enabled
+        if self.encoder.cls_mode:
+            # Down-sampling from 1024 to M key-points
+            x = self.block1(x)          # [B x 512 x 2048]
+            x = self.block2(x)          # [B x 256 x 2048]
+
         x = self.conv23(x)          # [B x cfg.key_points x 2048]
         x = self.softmax(x)          # [B x cfg.key_points x 2048] => [B x cfg.key_points x 2048{0 to 1}]
         x = torch.bmm(x, pc)        # [Bx cfg.key_points x2048] <-> [Bx2048x3]  =>  [Bx cfg.key_points x3]
