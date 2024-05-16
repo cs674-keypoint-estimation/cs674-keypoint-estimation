@@ -6,26 +6,29 @@ import data_loader as dataset
 from utils import AverageMeter
 import utils as function_bank
 import network
+import utils_alt
+
 from torch.utils.tensorboard import SummaryWriter
-import os
 
 import logging
 logger = logging.getLogger(__name__)
 
 def train(cfg):
+    torch.cuda.empty_cache()    
     writer = SummaryWriter("train_summary")
 
     KeypointDataset = getattr(dataset, 'generic_data_loader')
 
-    train_dataset = KeypointDataset(cfg, 'train')
+    train_dataset = KeypointDataset(cfg, 'train', max_pcds = 100)
     train_dataloader = torch.utils.data.DataLoader(train_dataset, batch_size=cfg.batch_size, shuffle=True,
                                                    num_workers=cfg.num_workers, drop_last=False)
 
-    val_dataset = KeypointDataset(cfg, 'val')
+    val_dataset = KeypointDataset(cfg, 'val', max_pcds=20)
     val_dataloader = torch.utils.data.DataLoader(val_dataset, batch_size=cfg.batch_size, shuffle=True,
                                                  num_workers=cfg.num_workers, drop_last=False)
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    model = network.sc3k(cfg).to(device) # cuda()   # unsupervised network
     model = network.sc3k(cfg).to(device) # cuda()   # unsupervised network
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
 
@@ -33,7 +36,11 @@ def train(cfg):
     best_loss = 1e10
     train_step = 0
     val_step = 0
-    for epoch in range(cfg.resume_epoch, cfg.max_epoch):
+    if cfg.alt_scripts == True:
+        loss_fn = utils_alt.compute_loss_alt
+    else:
+        loss_fn=function_bank.compute_loss
+    for epoch in range(cfg.max_epoch):
         train_iter = tqdm(train_dataloader)
 
         # Training
@@ -42,7 +49,8 @@ def train(cfg):
         for i, data in enumerate(train_iter):
 
             kp1, kp2 = model(data)
-            loss = function_bank.compute_loss(kp1, kp2, data, writer, train_step, cfg, split='train')
+            loss = loss_fn(kp1, kp2, data, writer, train_step, cfg, split='train')
+           
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
@@ -52,17 +60,20 @@ def train(cfg):
             writer.add_scalar('train_loss/overall', loss, train_step)  # write training loss
             train_step += 1  # increment in train_step
 
+                    
+
         train_loss = meter.avg
         logger.info(f'Epoch: {epoch}, Average Train loss: {meter.avg}')
 
         # validation loss
         model.eval()
         meter.reset()
+
         val_iter = tqdm(val_dataloader)
         for i, data in enumerate(val_iter):
             with torch.no_grad():
                 kp1, kp2 = model(data)
-                loss = function_bank.compute_loss(kp1, kp2, data, writer, val_step, cfg, split='val')
+                loss = loss_fn(kp1, kp2, data, writer, val_step, cfg, split='val')
 
                 writer.add_scalar('val_loss/overall', loss, val_step)  # write validation loss
                 val_step += 1  # increment in val_step
@@ -91,6 +102,7 @@ def main(cfg):
     logger.info(omegaconf.OmegaConf.to_yaml(cfg))
     cfg.task = 'generic'
     train(cfg)
+
 
 
 if __name__ == '__main__':
